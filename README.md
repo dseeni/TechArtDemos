@@ -30,7 +30,6 @@ ring to one of the following solvers:
 topological sorting per solver is determined by the valence (connected edges per vertex) combination of
 each edges respective verticies
 
-### Toplogical Sorting via Maya API 2.0 example
 #### The topological sorting example:
 
 '''
