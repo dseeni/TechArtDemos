@@ -1,6 +1,5 @@
 ![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 
-
 SKEW LINES SOLVER
 CPA I IMPLEMENTED
 https://core.ac.uk/download/pdf/74237799.pdf
@@ -67,7 +66,7 @@ which is a simple webpage whose html slots (html hotkey sequence as
 key)at each keyboard location take in a text string
 (value)
  ------------------------------------------------------------------------------
-MAYA PROJECTS BREAKDOWN:
+# MAYA PROJECTS BREAKDOWN
 Unchamfer ->
 Using mayas lower level python api, which really is a procedurally generated
 python api that has a 1 to 1 binding to its c++ api via SWIG
