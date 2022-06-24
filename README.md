@@ -50,42 +50,42 @@ vertexA valance = 4
 
 vertexB valance = 3
 
-Valences are sorted from min to max wherein (4,3) => (3,4)
+Valences are sorted from min to max wherein (4,3) -> (3,4)
 A valence pair of (3,4) => Line Plane Intersection Solver!
 ```
 
 In this way, each additional solver is triggered by a unique edge vertex
 valence pair as well:
 
-**Double Skew Solver => (4,4)**
+**Double Skew Solver -> (4,4)**
 ```
 - Wherein the given edge belongs to a trianglualr face in the case of corner
 chamfers and no intersection exists.
 ```
 
-**Skew Line Solver => (4,4)**
+**Skew Line Solver -> (4,4)**
 ```
 - The most common case, where no precise intersection exists so Skew is called.
 ```
 
-**Line Line Solver => (4,4)**
+**Line Line Solver -> (4,4)**
 ```
 - The easiest case wherein a perfect intersection exists and no CPA Skew solver
 is required.
 ```
 
-**Plane Plane Solver => (3,3)**
+**Plane Plane Solver -> (3,3)**
 ```
 - Rare topology case when you partial chamfer side of a cube
 ```
 
-**Line Plane Solver => (4,3)**
+**Line Plane Solver -> (4,3)**
 ```
 -  Common topology when you chamfer a cylinder whose top face is an N-gon or
 when you chamfer the top of a cube
 ```
 
-**Multi Line Plane Solver => (4+,4)**
+**Multi Line Plane Solver -> (4+,4)**
 ```
 - A rare topological case wherein there are more than 4 edges connected to one
 vertex edge (see example below).
