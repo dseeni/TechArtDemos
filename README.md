@@ -124,6 +124,11 @@ option, and select the edge that yields the minimum distance to intersection
 
 -----------------------------------------------------------------------
 
+
+
+### PolyUnbevel Project Overview:
+
+
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a
 per edge basis determined by vertex valence (connected edges per )
 
