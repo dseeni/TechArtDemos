@@ -117,6 +117,9 @@ option, and select the edge that yields the minimum distance to intersection
 ```
 ![](./DemoExamples/UnChamfer4+4.gif)
 
+In case there is any confusion, this time lapse shows Edge-Vertex Valence Pairs
+with labels:
+![](./DemoExamples/UnChamfer43and33and44WithLabels.gif)
 -----------------------------------------------------------------------
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a
