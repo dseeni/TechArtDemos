@@ -4,7 +4,7 @@
 ### PolyUnchamfer & PolyUnbevel Timelape:
 ![](./DemoExamples/UnbevelUnchamfer.gif)
 
-### Project Overview:
+### PolyUnchamfer Project Overview:
 
 #### Maya API 2.0: Fast Topological Querying and Sorting
 - Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python Api 2.0 (MFNMesh etc.)for
