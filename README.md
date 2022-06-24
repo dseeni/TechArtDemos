@@ -11,21 +11,20 @@ covering a wide array of intersection and collision scenarios (see below)
 - Maya Unbevel and Unchamfer leverage the Maya Python Api 2.0 for mesh traversal
 and topological sorting as well as for solver calculations.
 
-### Maya Python cmds Component Transformation and Mesh merging
-- After solver calculations and topological sorting are done via the Maya API
-final mesh manipulation is pushed to Maya Cmds. This allows for the tools to
-take advantage of Maya's built-in undo, given that geometry modifying plugins
-have very little documentation, especially for API 2.0. 
+### Maya Python Cmds for component transformation and topological modifications
+- After solver calculations and topological sorting are done via the Maya API,
+final mesh manipulation is pushed to Maya Cmds. This allows for the Unchamfer
+and Unbevel to take advantage of Maya's built-in Undo functionality for free.
 
-A custom node plugin was attempted, however it was abandoned due to lack of
-recent support and documentation.
+- A custom node plugin was attempted, however it was abandoned due to lack of
+recent support and documentation. Given that geometry modifying plugins have
+very little documentation, especially for API 2.0. (See PolyModifier.py below)
 
-- Further Reading on PolyModifier with API 1.0:
+- Further Reading on PolyModifier within API 1.0:
 https://download.autodesk.com/us/maya/2009help/api/poly_modifier_8py-example.html
 
-### Prior to vertex transformation, selected edge topology is mapped tovertex
-valence combinations via API 2.0 for each edge contained within the user
-selection to one of the following solvers:
+### Prior to vertex transformation, selected edges are mapped via their edge-vertex
+valence combinations to one of the following solvers:
 
 #### Skew lines Solver
 - A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
@@ -41,7 +40,7 @@ selection to one of the following solvers:
 #### Plane Plane Intersection Solver
 - https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/
 
-#### Solvers are triggered on a per edge basis 
+#### Solvers are triggered on a per edge basis
 - Leveraging Maya API 2.0 Mesh Function Sets topological sorting per
 edge solver is determined by the each edges dual vertex valence combination.
 Wherein valence refers to the number of connected edges per vertex, given
@@ -89,10 +88,10 @@ chamfers and no intersection exists.
 when you chamfer the top of a cube
 ```
 
-**Multi Line Plane Solver -> (4+,4)** 
+**Multi Line Plane Solver -> (4+,4)**
 ```
 - A rare topological case wherein there are more than 4 edges connected to one
-vertex edge (see example below). 
+vertex edge (see example below).
 
 In this instance UnChamfer will run a skew lines solver on each potential edge
 option, and select the edge the yields the minimum distance to intersection
