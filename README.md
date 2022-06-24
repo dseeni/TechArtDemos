@@ -1,6 +1,7 @@
 # Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel (Geometric Reconstruction)
+### PolyUnchamfer & PolyUnbevel Timelape:
 ![](./DemoExamples/UnbevelUnchamfer.gif)
 - Implemented a Vector Calculus Library similar to Blender's mathutils.geometry,
 covering a wide array of intersection and collision scenarios (see below)
