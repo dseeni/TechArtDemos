@@ -53,7 +53,9 @@ pair as well:
 - Wherein the given edge belongs to a trianglualr face in the case of corner chamfers
 
 **Plane Plane Solver -> (3,3)**
+`
 - Rare topology case when you partial chamfer side of a cube
+`
 
 **Line Plane Solver**
 - (4,3) Common topology when you chamfer a cylinder head
