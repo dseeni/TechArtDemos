@@ -128,7 +128,7 @@ option, and select the edge that yields the minimum distance to intersection
 
 ![](./DemoExamples/UnBevelSteps.jpg)
 
-Unbevel can be summarized in these 10 steps:
+**Unbevel can be summarized in these 10 steps:**
 <ul>
 <li>User Selection: 2 Edges adjacent to the beveled geometry</li>
 	<ul>
