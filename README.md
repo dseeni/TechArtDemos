@@ -7,47 +7,49 @@
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
+### Maya Unbevel and Unchamfer require querying the mesh topology using Maya
+Api 2.0 and mapping vertex valences combinations of each edge along an edge
+ring to one of the following solvers:
+
 #### Skew lines Solver
-- A 3D implementation of the CLosest Point of Approach Algorithim (Collison Detection):
-- https://math.ucr.edu/~res/math133/skew-lines.pdf
+- A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
+- https://en.wikipedia.org/wiki/Distance_of_closest_approach
+- https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/
 
 #### Line Line Intersectsion Solver
-- Graphics Gems Volume 2 Page 326 sample code:
-- http://www.realtimerendering.com/resources/GraphicsGems/gemsii/xlines.c
-
+- https://mathemerize.com/point-of-intersection-of-two-lines-in-3d/
 
 #### Line Plane Intersectsion Solver
 - https://handwiki.org/wiki/Line%E2%80%93plane_intersection
 
 #### Plane Plane Intersection Solver
-
+- https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/
 
 -- Solvers are triggered on a per edge basis leveraging Maya API 2.0's quick querying mechanism
 topological sorting per solver is determined by the valence (connected edges per vertex) combination of
 each edges respective verticies
 
+### The topological sorting example:
 '''
-For example:
+Lets take one edge along an unchamfer ring as a simple example:
 	Let vertexA and vertexB compromise of the verticies of Edge1
 	VertexA valance = 4
 	VertexB valance = 3
-	valences are sorted from min to max (4,3) -> (3,4) for solver mapping purposes
+	Valences are sorted from min to max wherein (4,3) -> (3,4) for solver mapping purposes
 	A valence combination of (3,4) -> Line Plane Intersection Solver
 
-  solver_tag_dict = {
-    'lps': om.MIntArray(),
-    'skew' : om.MIntArray(),
-    'doublesolve' : om.MIntArray(),
-    'plane2plane' : om.MIntArray(),
-  }
-'''
+In this way each additonal solvers have a unique vertex valence pair configuration as well:
 
+Line Line Solver -> (4,4)
+Skew Line Solver -> (4,4) [Assuming no intersection exists]
+Double Skew Sover -> (4,4) [Wherein the edge belongs to a trianglualr face in the case of corner chamfers]
+Plane Plane Solver -> (3,3) [Rare topology case when you partial chamfer side of a cube]
+Line Plane Solver -> (4,3) [Common topology when you chamfer a cylinder head]
+'''
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a per edge basis
 	determined by vertex
 valence (connected edges per )
-
-
 
 ## A Generic Hotkey Configuration Optimizer
 ### SuperCharge Maya/Photoshop/Zbrush/Fusion360/Moi3d!!
@@ -72,14 +74,12 @@ Parse Config Files and automatically generate an html page for easy reference:
 
 Hotkey framework for program reconfiguration
 
-
 Document the layout for east artist reference
 
 Extend the assignable configuration keys via autohotkey
 Maintainable
 Have a repository per user where they can store it remotely and back it up as
 well as view changes and make changes if needed
-
 
 Photoshop example
 Look at photoshops configuration file
@@ -128,14 +128,12 @@ http://paulbourke.net/geometry/pointlineplane/
 CPA algorithim:
 https://core.ac.uk/download/pdf/74237799.pdf
 
-
 Alternate case:
 non perfect intersections = CPA solver take the minimum on each vector then average
 
 EdgeCase:
 corner bevels of a 3 way intersection (triangle corner) Cpa Solving
 This required recursive bevel operations, performing the solver twice
-
 
 The first challenge apart from building a math library that did not exist in
 maya (extending the API) was
@@ -168,7 +166,7 @@ predictive
 always Y UP
 
 Smart Tool Handle Activation: (Lazy Boi Mode)
-Based on Manipulator to Camera Space projection, SnapAlign can calculate the 
+Based on Manipulator to Camera Space projection, SnapAlign can calculate the
 nearest active tool handle to the cursor, it does this by first projecting
 the gizmo axis onto the camera plane, then does a 2D vector angle calculation
 between the projected gizmo axis angles (-X -Y -Z +X +Y +Z) and the cursor
@@ -182,7 +180,6 @@ position! No more menus!
 
 SnapAlign in action, with Smart Tool Handle Activation turned ON:
 
-
 PRIMALIGN
 Aligns objects to the component (edge center face center OR vertex normal)
 under the cursor. If the object is a newly created primitive at world center
@@ -195,7 +192,6 @@ Secondary Function, when an active axis of the move tool is selected and a compo
 is selected, PrimAlign will aim the active axis towards the component center.
 Either edge center or face center for edges and faces, or vertex if a vertex is selected.
 
-
 RECORD WITH PLANAR DETECTION ON
 PLANEFLATTEN
 Consecutive Faces selected will align the first face to the second face ALONG
@@ -206,6 +202,16 @@ in a skew like effect per face towards the target plane alignment
 
 Select 3 vertex of a non planar face and planar align that face while respecting
 surround geometry
+
+
+
+
+
+
+
+
+
+
 
 
 
