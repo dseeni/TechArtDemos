@@ -2,7 +2,7 @@
 
 # Technical Art Demos
 
-## Unchamfer & Unbevel (Polygonal Reconstruction)
+## Unchamfer & Unbevel (Geometric Reconstruction)
 - Implemented a custom math library in Maya similar to Blenders for Vector Calculus Operations
 - [Skew Lines Solver]
 - [Skew Lines Solver]
