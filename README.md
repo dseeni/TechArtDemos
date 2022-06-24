@@ -41,7 +41,6 @@ Intersection Solver
 In this way each additonal solver has a unique edge vertex valence pair as
 well:
 
-```
 - Line Line Solver -> (4,4) The easiest case wherein a perfect intersection
 exists
 ```
