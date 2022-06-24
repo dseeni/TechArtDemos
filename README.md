@@ -1,6 +1,8 @@
 ![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 
-SKEW LINES SOLVER
+# Technical Art Demos
+
+## SKEW LINES SOLVER
 CPA I IMPLEMENTED
 https://core.ac.uk/download/pdf/74237799.pdf
 Photoshop
@@ -14,7 +16,7 @@ Zbrush
 Substance Designer
 Substance Painter
 
-Photoshop project breakdown
+## A Generic Hotkey Configuration Optimizer
 Hotkey framework for program reconfiguration
 
 Optimize UI the ui layout
