@@ -66,7 +66,10 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 ![](./DemoExamples/UnchamferCornerCase.gif)
 
+<details>
+  <summary>Double Solve Diagram</summary>
 ![](./DemoExamples/unbevel_example.jpg)
+</details>
 
 -----------------------------------------------------------------------
 **Skew Line Solver (4,4):**
