@@ -124,11 +124,17 @@ option, and select the edge that yields the minimum distance to intersection
 
 -----------------------------------------------------------------------
 
-
-
 ### PolyUnbevel Project Overview:
 
 ![](./DemoExamples/UnBevelSteps.jpg)
+
+Unbevel can be summarized in these 10 steps:
+1. User Selection -> 2 Edges
+	a. The World-Space coordinates of each edge are stored for edge
+	selection post geometry modification, when vertex IDs have changed.
+
+
+-----------------------------------------------------------------------
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a
 per edge basis determined by vertex valence (connected edges per )
