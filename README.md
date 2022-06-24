@@ -63,15 +63,15 @@ In this way, each additional solver is triggered by a unique edge-vertex
 Valence Pair as well:
 
 -----------------------------------------------------------------------
-**Recursive Triple Skew Lines Solver (4,4):**
+**Recursive 3-Way Skew Lines Solver (4,4):**
 ```
-The Triple Skew Solver is triggered when selected edge(s) belong to a
+The 3-Way Skew Solver is triggered when selected edge(s) belong to a
 trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 ![](./DemoExamples/UnchamferCornerCase.gif)
 
 <details>
-  <summary>Triple Solve Diagram</summary>
+  <summary>3-Way Solve Diagram</summary>
 
 ![](./DemoExamples/unbevel_example.jpg)
 </details>
