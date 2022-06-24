@@ -12,12 +12,13 @@
 (MIterators, MFNMesh etc.) for mesh traversal and topological sorting. MVector
 and MMatrix are used for solver calculations.
 
-- Implemented a custom vector calculus library within Maya, an augmented
-version of Blender's mathutils.geometry, covering a wide array of intersection
-and collision scenarios leveraging Maya API 2.0 (see below). Since all vector
-and matrix calculations are done utilizing Maya API 2.0 exclusively, no
-dependencies are in place for Numpy and backwards compatibility with 
-Maya 2018 - 2022 is maintained without an additional third-party package.
+- All the following scripts utilize a custom vector calculus library within
+Maya, an augmented version of Blender's mathutils.geometry, covering a wide
+array of intersection and collision scenarios leveraging Maya API 2.0 (see
+below). Since all vector and matrix calculations are done utilizing Maya API
+2.0 exclusively, no dependencies are in place for Numpy and backwards
+compatibility with Maya 2018 - 2022 is maintained without an additional
+third-party package.
 
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
