@@ -109,7 +109,7 @@ or when you chamfer the top face of a cube.
 **Multi Line Plane Solver (4+,4):**
 ```
 A rare topological case wherein there are more than 4 edges connected to one
-vertex edge (see example below).
+Edge-Vertex (see example below).
 
 In this instance UnChamfer will run a skew lines solver on each potential edge
 option, and select the edge the yields the minimum distance to intersection
@@ -118,9 +118,8 @@ option, and select the edge the yields the minimum distance to intersection
 
 -----------------------------------------------------------------------
 
-- Maya Api 2.0 topological queries result in blending between 3 solvers on a per edge basis
-	determined by vertex
-valence (connected edges per )
+- Maya Api 2.0 topological queries result in blending between 3 solvers on a
+per edge basis determined by vertex valence (connected edges per )
 
 ## A Generic Hotkey Configuration Optimizer
 ### SuperCharge Maya/Photoshop/Zbrush/Fusion360/Moi3d!!
