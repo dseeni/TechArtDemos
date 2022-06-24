@@ -43,7 +43,7 @@ A valence combination of (3,4) -> Line Plane Intersection Solver
 In this way each additonal solver is triggered by a unique edge vertex valence
 pair as well:
 
-**###Line Line Solver -> (4,4)**
+**Line Line Solver -> (4,4)**
 ```
 - The easiest case wherein a perfect intersection exists and no CPA Skew solver
 is required.
