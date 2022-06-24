@@ -15,13 +15,11 @@ solver calculations.
 ### Maya Cmds: Component Transformation And Topology Merging
 - After solver calculations and topological sorting are done via the Maya API,
 final mesh manipulation is pushed to Maya Cmds. This allows for the Unchamfer
-and Unbevel to take advantage of Maya's built-in Undo functionality for free.
+and Unbevel to take advantage of Maya's built-in Undo functionality without
+additional plugin code. Given that geometry modifying plugins have
+very little documentation, especially for API 2.0.
 
-- A custom node plugin was attempted, however it was abandoned due to lack of
-recent support and documentation. Given that geometry modifying plugins have
-very little documentation, especially for API 2.0. (See PolyModifier.py below)
-
-- Further Reading on PolyModifier within API 1.0:
+- Further Reading on PolyModifier Undo Mechanisms within API 1.0:
 https://download.autodesk.com/us/maya/2009help/api/poly_modifier_8py-example.html
 
 ### Prior to vertex transformation, selected edges are mapped via their edge-vertex
