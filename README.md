@@ -14,7 +14,7 @@ https://core.ac.uk/download/pdf/74237799.pdf
 
 
 ## A Generic Hotkey Configuration Optimizer
-# Speed!!
+### SuperCharge Maya/Photoshop/Zbrush/Fusion360/Moi3d!!
 ![](https://i0.wp.com/scifiinterfaces.com/wp-content/uploads/2013/06/typing.gif)
 
 -- Optimize Artist Workflows with a more efficent Hotkey layout
