@@ -7,10 +7,23 @@
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
-### Maya API 2.0 Topological Querying and Sorting
-- The Maya Unbevel and Unchamfer tools required querying the mesh topology using Maya
-Api 2.0 and mapping vertex valence combinations of each edge of the user selection
-to one of the following solvers:
+### Maya API 2.0 Fast Topological Querying and Sorting
+- Maya Unbevel and Unchamfer leverage the Maya Python Api 2.0 for mesh traversal
+and topological sorting as well as for solver calculations.
+
+### Maya Python cmds Component Transformation and Mesh merging
+- After solver calculations and topological sorting are done via the Maya API
+final mesh manipulation is pushed to Maya Cmds. This allows for the tools to
+take advantage of Maya's built in undo, given that geometry modifier based
+plugins have very little documentation, especially for API 2.0. A custom
+node plugin was attempted, however it was abandoned due to lack of support and
+documentation.
+- Further Reading on PolyModifier with API 1.0:
+https://download.autodesk.com/us/maya/2009help/api/poly_modifier_8py-example.html
+
+### Prior to vertex transformation, selected edge topology is mapped tovertex
+valence combinations via API 2.0 for each edge contained within the user
+selection to one of the following solvers:
 
 #### Skew lines Solver
 - A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
@@ -26,19 +39,20 @@ to one of the following solvers:
 #### Plane Plane Intersection Solver
 - https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/
 
--- Solvers are triggered on a per edge basis leveraging Maya API 2.0's quick querying mechanism
-topological sorting per solver is determined by the valence (connected edges per vertex) combination of
-each edges respective verticies
+- Solvers are triggered on a per edge basis leveraging Maya API 2.0's quick
+querying mechanism topological sorting per solver is determined by the valence
+(connected edges per vertex) combination of each edges respective verticies
 
-#### The topological sorting example:
+#### Topological Sorting Example:
 
-Lets take one edge within an unchamfer input seleciton  as a simple example:
-
-Let vertexA and vertexB compromise of the verticies of Edge1
+- Lets take one edge within an Unchamfer user input seleciton  as a simple example:
+```
+Let vertexA and vertexB compromise of the verticies of Edge1:
 VertexA valance = 4
 VertexB valance = 3
 Valences are sorted from min to max wherein (4,3) -> (3,4)
 A valence combination of (3,4) -> Line Plane Intersection Solver
+```
 
 In this way each additonal solver is triggered by a unique edge vertex valence
 pair as well:
