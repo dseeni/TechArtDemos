@@ -184,6 +184,7 @@ data into arrays and reduce the api calls by tightly organizing your data
 calling eveyrthing you need at once and sorting it yourself.
 
 CmdsSnapalign
+Relative spacing on or off to stack objects
 Built a snapping system from the ground up
 Calculates the face center of a polygon even if a real vertex does not exist
 easy align objects
