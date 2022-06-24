@@ -2,20 +2,20 @@
 
 # Technical Art Demos
 
-## Maya Unchamfer & Unbevel (Geometric Reconstruction)
+## Maya PolyUnchamfer & PolyUnbevel (Geometric Reconstruction)
 - Implemented a Vector Calculus Library similar to Blender's mathutils.geometry
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
 ### Maya API 2.0: Fast Topological Querying and Sorting
-- Maya Unbevel and Unchamfer leverage the Maya Python Api 2.0 (MFNMesh etc.)for
+- Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python Api 2.0 (MFNMesh etc.)for
 mesh traversal and topological sorting. MVector and MMatrix are used for
 solver calculations.
 
 ### Maya Cmds: Component Transformation And Topology Merging
 - After solver calculations and topological sorting are done via the Maya API,
-final mesh manipulation is pushed to Maya Cmds. This allows for the Unchamfer
-and Unbevel to take advantage of Maya's built-in Undo functionality.
+final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
+and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
 
 ### Prior to vertex transformation, selected edges are mapped via their edge-vertex
 valence combinations to one of the following solvers:
@@ -38,11 +38,12 @@ valence combinations to one of the following solvers:
 - Leveraging Maya API 2.0 Mesh Function Sets topological sorting per
 edge solver is determined by the each edges dual vertex valence combination.
 Wherein valence refers to the number of connected edges per vertex, given
-two vertecies per selected edge.
+two vertices per selected edge.
 
 #### Topological Sorting Example:
 
-- Lets take one edge within an Unchamfer user's input seleciton as a simple example:
+- Lets take one edge within a potential PolyUnchamfer input selection as a simple example:
+
 ```
 Let vertexA and vertexB compromise of the verticies of Edge1:
 vertexA valance = 4
@@ -51,13 +52,13 @@ Valences are sorted from min to max wherein (4,3) -> (3,4)
 A valence combination of (3,4) -> Line Plane Intersection Solver
 ```
 
-In this way each additonal solver is triggered by a unique edge vertex valence
-pair as well:
+In this way, each additional solver is triggered by a unique edge vertex
+valence pair as well:
 
-**Line Line Solver -> (4,4)**
+**Double Skew Solver -> (4,4)**
 ```
-- The easiest case wherein a perfect intersection exists and no CPA Skew solver
-is required.
+- Wherein the given edge belongs to a trianglualr face in the case of corner
+chamfers and no intersection exists.
 ```
 
 **Skew Line Solver -> (4,4)**
@@ -65,10 +66,10 @@ is required.
 - The most common case, where no precise intersection exists so Skew is called.
 ```
 
-**Double Skew Solver -> (4,4)**
+**Line Line Solver -> (4,4)**
 ```
-- Wherein the given edge belongs to a trianglualr face in the case of corner
-chamfers and no intersection exists.
+- The easiest case wherein a perfect intersection exists and no CPA Skew solver
+is required.
 ```
 
 **Plane Plane Solver -> (3,3)**
