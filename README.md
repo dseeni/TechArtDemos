@@ -37,7 +37,7 @@ valence pairs to one of the following solvers:
 #### Solvers are triggered on a per edge basis
 - Leveraging Maya API 2.0 Mesh Function Sets, topological sorting per
 edge solver is determined by the each edge's edge-vertex valence pair.
-- *Valence refers to the number of connected edges per vertex, given
+- *Valence refers to the number of connected edges per vertex, with
 two vertices per selected edge*
 
 #### Topological Sorting Example:
@@ -47,9 +47,11 @@ two vertices per selected edge*
 ```
 Let vertexA and vertexB compromise of the verticies of Edge1:
 vertexA valance = 4
+
 vertexB valance = 3
+
 Valences are sorted from min to max wherein (4,3) -> (3,4)
-A valence pair of (3,4) -> Line Plane Intersection Solver
+A valence pair of (3,4) -> Line Plane Intersection Solver!
 ```
 
 In this way, each additional solver is triggered by a unique edge vertex
