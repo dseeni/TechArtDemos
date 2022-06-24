@@ -3,7 +3,7 @@
 # Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel (Geometric Reconstruction)
-- Implemented a Vector Calculus Library similar to Blender's mathutils.geometry
+- Implemented a Vector Calculus Library similar to Blender's mathutils.geometry,
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
@@ -18,7 +18,7 @@ final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
 and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
 
 ### Prior to vertex transformation, selected edges are mapped via their edge-vertex
-valence combinations to one of the following solvers:
+valence pairs to one of the following solvers:
 
 #### Skew lines Solver
 - A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
@@ -35,10 +35,10 @@ valence combinations to one of the following solvers:
 - https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/
 
 #### Solvers are triggered on a per edge basis
-- Leveraging Maya API 2.0 Mesh Function Sets topological sorting per
-edge solver is determined by the each edges dual vertex valence combination.
-Wherein valence refers to the number of connected edges per vertex, given
-two vertices per selected edge.
+- Leveraging Maya API 2.0 Mesh Function Sets, topological sorting per
+edge solver is determined by the each edge's edge-vertex valence pair.
+*Valence refers to the number of connected edges per vertex, given
+two vertices per selected edge*
 
 #### Topological Sorting Example:
 
@@ -49,7 +49,7 @@ Let vertexA and vertexB compromise of the verticies of Edge1:
 vertexA valance = 4
 vertexB valance = 3
 Valences are sorted from min to max wherein (4,3) -> (3,4)
-A valence combination of (3,4) -> Line Plane Intersection Solver
+A valence pair of (3,4) -> Line Plane Intersection Solver
 ```
 
 In this way, each additional solver is triggered by a unique edge vertex
