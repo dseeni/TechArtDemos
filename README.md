@@ -7,11 +7,11 @@
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
-### Maya API 2.0 -> Fast Topological Querying and Sorting
+### Maya API 2.0 => Fast Topological Querying and Sorting
 - Maya Unbevel and Unchamfer leverage the Maya Python Api 2.0 for mesh traversal
 and topological sorting, as well as for solver calculations.
 
-### Maya Python Cmds -> Component Transformation And Topology Merging
+### Maya Python Cmds => Component Transformation And Topology Merging
 - After solver calculations and topological sorting are done via the Maya API,
 final mesh manipulation is pushed to Maya Cmds. This allows for the Unchamfer
 and Unbevel to take advantage of Maya's built-in Undo functionality for free.
