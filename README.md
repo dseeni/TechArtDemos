@@ -71,7 +71,7 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 -----------------------------------------------------------------------
 **Skew Line Solver (4,4):**
 ```
-The most common case, where no precise intersection exists so Skew is called.
+The most common case, where no precise intersection exists.
 ```
 ![](./DemoExamples/UnChamfer43and33and44.gif)
 
@@ -86,16 +86,16 @@ is required.
 -----------------------------------------------------------------------
 **Plane Plane Solver (3,3):**
 ```
-Rare topology case when you partial chamfer side of a cube
+A rare topological case such as a partially chamfered cube.
 ```
-![](./DemoExamples/EasyAimPrimAlignAIM.gif)
+![](./DemoExamples/UnChamfer33and43.gif)
 -----------------------------------------------------------------------
 **Line Plane Solver (4,3):**
 ```
- Common topology when you chamfer a cylinder whose top face is an N-gon or
-when you chamfer the top of a cube
+A common topological when a cylinder whose top face is an N-gon is chamfered
+or when you chamfer the top face of a cube.
 ```
-![](./DemoExamples/EasyAimPrimAlignAIM.gif)
+![](./DemoExamples/UnChamfer43.gif)
 
 -----------------------------------------------------------------------
 **Multi Line Plane Solver (4+,4):**
