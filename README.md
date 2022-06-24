@@ -22,7 +22,7 @@ scenarios leveraging Maya API 2.0 (see below)
 final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
 and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
 
-#### *Edge-Vertex Valence Pair values map to one of the following solvers:*
+#### *Edge-Vertex Valence Pair Values map to one of the following Solvers:*
 
 #### Skew lines Solver
 - A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
@@ -63,15 +63,15 @@ In this way, each additional solver is triggered by a unique edge vertex
 valence pair as well:
 
 -----------------------------------------------------------------------
-**Double Skew Solver (4,4):**
+**Recursive Triple Skew Solver (4,4):**
 ```
-The Double Skew Solver is triggered when selected edge(s) belong to a
+The Triple Skew Solver is triggered when selected edge(s) belong to a
 trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 ![](./DemoExamples/UnchamferCornerCase.gif)
 
 <details>
-  <summary>Double Solve Diagram</summary>
+  <summary>Triple Solve Diagram</summary>
 
 ![](./DemoExamples/unbevel_example.jpg)
 </details>
