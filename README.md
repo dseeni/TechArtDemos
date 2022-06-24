@@ -57,7 +57,7 @@ Vertex_B valance = 3
 
 Valences are sorted from min to max wherein (4,3) -> (3,4)
 
-A Valence Pair of (3,4) => Line Plane Intersection Solver!
+Thus a Valence Pair of (4,3) => Line Plane Solver(3,4)! Simple!
 ```
 
 In this way, each additional solver is triggered by a unique edge-vertex
