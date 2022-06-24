@@ -32,21 +32,25 @@ each edges respective verticies
 
 #### The topological sorting example:
 ```
-Lets take one edge along an unchamfer ring as a simple example:
-	Let vertexA and vertexB compromise of the verticies of Edge1
-	VertexA valance = 4
-	VertexB valance = 3
-	Valences are sorted from min to max wherein (4,3) -> (3,4) for solver mapping purposes
-	A valence combination of (3,4) -> Line Plane Intersection Solver
+Lets take one edge along an unchamfer ring as a simple example: Let vertexA and
+vertexB compromise of the verticies of Edge1 VertexA valance = 4 VertexB
+valance = 3 Valences are sorted from min to max wherein (4,3) -> (3,4) for
+solver mapping purposes A valence combination of (3,4) -> Line Plane
+Intersection Solver
 
-In this way each additonal solver has a unique edge vertex valence pair as well:
-- Line Line Solver -> (4,4) The easiest case wherein a perfect intersection exists
+In this way each additonal solver has a unique edge vertex valence pair as
+well:
+- Line Line Solver -> (4,4) The easiest case wherein a perfect intersection
+exists
 
-- Skew Line Solver -> (4,4) The most common case, where no precise intersection exists
+- Skew Line Solver -> (4,4) The most common case, where no precise intersection
+exists
 
-- Double Skew Sover -> (4,4) Wherein the given edge belongs to a trianglualr face in the case of corner chamfers
+- Double Skew Sover -> (4,4) Wherein the given edge belongs to a trianglualr
+face in the case of corner chamfers
 
-- Plane Plane Solver -> (3,3) Rare topology case when you partial chamfer side of a cube
+- Plane Plane Solver -> (3,3) Rare topology case when you partial chamfer side
+of a cube
 
 - Line Plane Solver -> (4,3) Common topology when you chamfer a cylinder head
 
