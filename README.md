@@ -106,7 +106,7 @@ or when you chamfer the top face of a cube.
 ![](./DemoExamples/UnChamfer43.gif)
 
 -----------------------------------------------------------------------
-**Multi-Line Plane \ Skew Line Solver (4+,4):**
+**Multi-Line Plane / Skew Line Solver (4+,4):**
 ```
 A rare topological case wherein there are more than 4 edges connected to one
 Edge-Vertex (see example below)
@@ -128,6 +128,7 @@ option, and select the edge that yields the minimum distance to intersection
 
 ### PolyUnbevel Project Overview:
 
+![](./DemoExamples/UnBevelSteps.jpg)
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a
 per edge basis determined by vertex valence (connected edges per )
