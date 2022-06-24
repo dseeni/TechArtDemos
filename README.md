@@ -37,7 +37,7 @@ valence pairs to one of the following solvers:
 #### Solvers are triggered on a per edge basis
 - Leveraging Maya API 2.0 Mesh Function Sets, topological sorting per
 edge solver is determined by the each edge's edge-vertex valence pair.
-*Valence refers to the number of connected edges per vertex, given
+- *Valence refers to the number of connected edges per vertex, given
 two vertices per selected edge*
 
 #### Topological Sorting Example:
