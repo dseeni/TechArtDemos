@@ -13,19 +13,25 @@
 and MMatrix are used for solver calculations.
 
 - All the following scripts utilize a custom vector calculus library within
-Maya, an augmented version of Blender's mathutils.geometry, covering a wide
-array of intersection and collision scenarios leveraging Maya API 2.0 (see
-below). Since all vector and matrix calculations are done utilizing Maya API
-2.0 exclusively, no dependencies are in place for Numpy and backwards
-compatibility with Maya 2018 - 2022 is maintained without an additional
-third-party package.
+Maya API 2.0. In essence, it's an augmented version of Blender's
+mathutils.geometry, covering a wide array of intersection and collision
+scenarios (examples below). Since all vector and matrix calculations are done
+utilizing Maya API 2.0 exclusively, no dependencies are in place for Numpy and
+backwards compatibility with Maya 2018 - 2022 is maintained without an
+additional third-party package elminating any potential distribution
+complications.
 
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
 #### Maya Cmds: Component Transformation And Topology Merging
-- After solver calculations and topological sorting are done via the Maya API,
+- Much of the heavy lifting for these tools is done within the Maya API.
+However, after solver calculations and topological sorting are finished,
 final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
-and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
+and PolyUnbevel to take advantage of Maya's built-in Undo functionality without
+the overhead of a custom polyModifier subclassed plugin. This represents a best
+of both worlds approach, Maya API 2.0 for fast vector and matrix operations, as
+well as pulling internal geometry data, and Maya Cmds for final geometry
+manipulation and undo.
 
 #### *Edge-Vertex Valence Pair Values map to one of the following Solvers:*
 
