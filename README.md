@@ -15,8 +15,7 @@ https://core.ac.uk/download/pdf/74237799.pdf
 
 ## A Generic Hotkey Configuration Optimizer
 # Speed!!
-![](https://imgur.com/r/woahdude/y2wd9rK)
-
+![](//imgur.com/y2wd9rK)
 
 -- Optimize Artist Workflows with a more efficent Hotkey layout
 	---- Faster artists (more efficient)[x]
