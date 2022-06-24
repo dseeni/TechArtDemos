@@ -106,7 +106,7 @@ or when you chamfer the top face of a cube.
 ![](./DemoExamples/UnChamfer43.gif)
 
 -----------------------------------------------------------------------
-**Multi-Line Plane Solver (4+,4):**
+**Multi-Line Plane \ Skew Line Solver (4+,4):**
 ```
 A rare topological case wherein there are more than 4 edges connected to one
 Edge-Vertex (see example below).
