@@ -60,8 +60,9 @@ face in the case of corner chamfers
 of a cube
 ```
 
+- **Line Plane Solver** 
 ```
-- **Line Plane Solver** -> (4,3) Common topology when you chamfer a cylinder head
+(4,3) Common topology when you chamfer a cylinder head
 ```
 
 ```
