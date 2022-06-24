@@ -1,8 +1,7 @@
-![](./DemoExamples/EasyAimPrimAlignAIM.gif)
-
 # Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel (Geometric Reconstruction)
+![](./DemoExamples/UnbevelUnchamfer.gif)
 - Implemented a Vector Calculus Library similar to Blender's mathutils.geometry,
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
