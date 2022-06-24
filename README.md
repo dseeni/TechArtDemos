@@ -129,6 +129,7 @@ option, and select the edge that yields the minimum distance to intersection
 ![](./DemoExamples/UnBevelSteps.jpg)
 
 **Unbevel can be summarized in these 10 steps:**
+<ul>
 <li>User Selection: 2 Edges adjacent to the beveled geometry</li>
 	<ul>
 	<li>The World-Space coordinates of each edge-vertex are stored for edge
@@ -150,7 +151,7 @@ option, and select the edge that yields the minimum distance to intersection
 <li>The original selection edges are removed</li>
 <li>Edge Ring selection is triggered</li>
 <li>PolyUnChamfer is called</li>
-
+</ul>
 
 -----------------------------------------------------------------------
 
