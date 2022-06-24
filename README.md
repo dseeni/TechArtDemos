@@ -63,12 +63,14 @@ valence pair as well:
 chamfers and no intersection exists.
 ```
 **Double Skew Solver (4,4)Demo:**
+![](./DemoExamples/UnchamferCornerCase.gif)
 
 **Skew Line Solver (4,4)**
 ```
 - The most common case, where no precise intersection exists so Skew is called.
 ```
 **Skew Line Solver (4,4)Demo:**
+![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 
 **Line Line Solver (4,4)**
 ```
@@ -76,12 +78,15 @@ chamfers and no intersection exists.
 is required.
 ```
 **Line Line Solver (4,4)Demo:**
+![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 
 **Plane Plane Solver (3,3)**
 ```
 - Rare topology case when you partial chamfer side of a cube
 ```
+
 **Plane Plane Solver (3,3)Demo:**
+![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 
 **Line Plane Solver (4,3)**
 ```
@@ -89,6 +94,7 @@ is required.
 when you chamfer the top of a cube
 ```
 **Line Plane Solver (4,3)Demo:**
+![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 
 **Multi Line Plane Solver (4+,4)**
 ```
