@@ -56,11 +56,11 @@ Vertex_B valance = 3
 
 Valences are sorted from min to max wherein (4,3) -> (3,4)
 
-A valence pair of (3,4) => Line Plane Intersection Solver!
+A Valence Pair of (3,4) => Line Plane Intersection Solver!
 ```
 
-In this way, each additional solver is triggered by a unique edge vertex
-valence pair as well:
+In this way, each additional solver is triggered by a unique edge-vertex
+Valence Pair as well:
 
 -----------------------------------------------------------------------
 **Recursive Triple Skew Solver (4,4):**
