@@ -17,9 +17,6 @@ Substance Designer
 Substance Painter
 
 ## A Generic Hotkey Configuration Optimizer
------------------------------------------------------------------------
-test
------------------------------------------------------------------------
 
 Hotkey framework for program reconfiguration
 
