@@ -68,7 +68,7 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 - The most common case, where no precise intersection exists so Skew is called.
 ```
-![](./DemoExamples/UnChamfer33and43.gif)
+![](./DemoExamples/UnChamfer43and33and44.gif)
 
 **Line Line Solver (4,4)**
 ```
