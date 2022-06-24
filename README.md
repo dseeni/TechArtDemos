@@ -129,23 +129,28 @@ option, and select the edge that yields the minimum distance to intersection
 ![](./DemoExamples/UnBevelSteps.jpg)
 
 Unbevel can be summarized in these 10 steps:
-1. User Selection -> 2 Edges
-	- The World-Space coordinates of each edge are stored for edge
-	selection post geometry modification, when vertex IDs have changed.
-2. Edge ring selection is triggered selecting interior edge loops
-3. Interior edge ring is select, minus the original user selection
-4. Interior edge ring is converted to edge loops and deleted
-5. Vertex IDs have changed due to topological modification of the mesh
-	- Using the original edges World-Space coordinates, edge centers are
+<ul>
+<li>User Selection: 2 Edges adjacent to the beveled geometry</li>
+	<ul>
+	<li>The World-Space coordinates of each edge-vertex are stored for edge
+	selection post geometry modification, when vertex IDs have changed</li>
+	</ul>
+<li> Edge ring selection is triggered selecting interior edge loops</li>
+<li> Interior edge ring is select, minus the original user selection</li>
+<li> Interior edge ring is converted to edge loops and deleted</li>
+<li> Vertex IDs have changed due to topological modification of the mesh</li>
+	<ul>
+	<li> Using the original edges World-Space coordinates, edge centers are
 	calculated via Maya API calls to MPointOnMesh, retriving the new
-	closest edge IDs of the original selection despite ID's being different
-	- Edge selection is converted to Faces
+	closest edge IDs of the original selection despite ID's being different</li>
+	<li> Edge selection is converted to Faces</li>
+	</ul>
 	
-6. The Common Face for each convert2faces per edge conversion is filtered
-7. This face is converted to edges
-8. The original selection edges are removed
-9. Edge Ring selection is triggered
-10. PolyUnChamfer is called
+<li> The Common Face for each convert2faces per edge conversion is filtered</li>
+<li> This face is converted to edges</li>
+<li> The original selection edges are removed</li>
+<li> Edge Ring selection is triggered</li>
+</ul> PolyUnChamfer is called
 
 -----------------------------------------------------------------------
 
