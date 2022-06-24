@@ -2,7 +2,10 @@
 
 # Technical Art Demos
 
-## SKEW LINES SOLVER
+## Unchamfer & Unbevel (Polygonal Reconstruction)
+- [Skew Lines Solver]
+
+### SKEW LINES SOLVER
 CPA I IMPLEMENTED
 https://core.ac.uk/download/pdf/74237799.pdf
 Photoshop
