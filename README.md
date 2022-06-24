@@ -12,11 +12,11 @@
 mesh traversal and topological sorting. MVector and MMatrix are used for
 solver calculations.
 
-- Implemented a custom vector calculus library within Maya, similar to
-Blender's mathutils.geometry, covering a wide array of intersection and
-collision scenarios leveraging Maya API 2.0 (see below). Since all vector
+- Implemented a custom vector calculus library within Maya, an augmented
+version of Blender's mathutils.geometry, covering a wide array of intersection
+and collision scenarios leveraging Maya API 2.0 (see below). Since all vector
 and matrix calculations are done utilizing Maya API 2.0 exclusively, no
-dependencies are in place for Numpy and backwards compatibility with
+dependencies are in place for Numpy and backwards compatibility with 
 Maya 2018 - 2022 is maintained without an additional third-party package.
 
 - https://docs.blender.org/api/current/mathutils.geometry.html
@@ -28,7 +28,7 @@ and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
 
 #### *Edge-Vertex Valence Pair Values map to one of the following Solvers:*
 
-#### Skew lines Solver
+#### Skew lines Cloest Point of Approach Solver
 - A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
 - https://en.wikipedia.org/wiki/Distance_of_closest_approach
 - https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/
@@ -60,11 +60,12 @@ Vertex_B valance = 3
 
 Valences are sorted from min to max wherein (4,3) -> (3,4)
 
-Thus a Valence Pair of (4,3) => Line Plane Solver(3,4)! Simple!
+Thus a Valence Pair of (4,3) => Line Plane Solver(3,4)
+Simple!
 ```
 
 In this way, each additional solver is triggered by a unique edge-vertex
-Valence Pair, as noted in the following section:
+Valence Pair on a per edge basis, as noted in the following section:
 
 -----------------------------------------------------------------------
 **Recursive 3-Way Skew Lines Solver (4,4):**
