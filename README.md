@@ -79,22 +79,22 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 -----------------------------------------------------------------------
 **Skew Line Solver (4,4):**
 ```
-The most common case, where no precise intersection exists.
+The most common case, wherein no precise edge vector intersection exists.
 ```
 ![](./DemoExamples/UnChamfer43and33and44.gif)
 
 -----------------------------------------------------------------------
 **Line Line Solver (4,4):**
 ```
-The easiest case wherein a perfect intersection exists and no CPA Skew solver
-is required.
+The most straight-forward case, wherein a perfect vector intersection exists
+and no CPA Skew solver is required.
 ```
 ![](./DemoExamples/UnchamferStrict44.gif)
 
 -----------------------------------------------------------------------
 **Plane Plane Solver (3,3):**
 ```
-A rare topological case such as a partially chamfered cube.
+A rare topological case, such as a partially chamfered cube.
 ```
 ![](./DemoExamples/UnChamfer33and43.gif)
 -----------------------------------------------------------------------
