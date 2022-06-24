@@ -3,21 +3,23 @@
 ## Maya PolyUnchamfer & PolyUnbevel (Geometric Reconstruction)
 ### PolyUnchamfer & PolyUnbevel Timelape:
 ![](./DemoExamples/UnbevelUnchamfer.gif)
+
+### Project Overview:
 - Implemented a Vector Calculus Library similar to Blender's mathutils.geometry,
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
-### Maya API 2.0: Fast Topological Querying and Sorting
+#### Maya API 2.0: Fast Topological Querying and Sorting
 - Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python Api 2.0 (MFNMesh etc.)for
 mesh traversal and topological sorting. MVector and MMatrix are used for
 solver calculations.
 
-### Maya Cmds: Component Transformation And Topology Merging
+#### Maya Cmds: Component Transformation And Topology Merging
 - After solver calculations and topological sorting are done via the Maya API,
 final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
 and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
 
-### Prior to vertex transformation, selected edges are mapped via their edge-vertex
+#### Prior to vertex transformation, selected edges are mapped via their edge-vertex
 valence pairs to one of the following solvers:
 
 #### Skew lines Solver
