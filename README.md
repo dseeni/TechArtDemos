@@ -17,10 +17,10 @@ ring to one of the following solvers:
 - https://en.wikipedia.org/wiki/Distance_of_closest_approach
 - https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/
 
-#### Line Line Intersectsion Solver
+#### Line Line Intersection Solver
 - https://mathemerize.com/point-of-intersection-of-two-lines-in-3d/
 
-#### Line Plane Intersectsion Solver
+#### Line Plane Intersection Solver
 - https://handwiki.org/wiki/Line%E2%80%93plane_intersection
 
 #### Plane Plane Intersection Solver
@@ -32,8 +32,8 @@ each edges respective verticies
 
 #### The topological sorting example:
 
-'''
-Lets take one edge along an unchamfer ring as a simple example:
+
+'''Lets take one edge along an unchamfer ring as a simple example:
 	Let vertexA and vertexB compromise of the verticies of Edge1
 	VertexA valance = 4
 	VertexB valance = 3
@@ -46,8 +46,8 @@ In this way each additonal solvers have a unique vertex valence pair configurati
 - Skew Line Solver -> (4,4) The most common case, where no precise intersection exists
 - Double Skew Sover -> (4,4) Wherein the given edge belongs to a trianglualr face in the case of corner chamfers
 - Plane Plane Solver -> (3,3) Rare topology case when you partial chamfer side of a cube
-- Line Plane Solver -> (4,3) Common topology when you chamfer a cylinder head
-'''
+'''- Line Plane Solver -> (4,3) Common topology when you chamfer a cylinder head
+
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a per edge basis
 	determined by vertex
