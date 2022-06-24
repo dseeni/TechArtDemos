@@ -2,9 +2,7 @@
 
 ## Maya PolyUnchamfer & PolyUnbevel (Geometric Reconstruction)
 ### PolyUnchamfer & PolyUnbevel Timelape:
-<p>
 ![](./DemoExamples/UnbevelUnchamfer.gif)
-</p>
 ### PolyUnchamfer Project Overview:
 
 #### Maya API 2.0: Fast Topological Querying and Sorting
