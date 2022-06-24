@@ -7,7 +7,7 @@
 -----------------------------------------------------------------------
 ### PolyUnchamfer Project Overview:
 
-#### Maya API 2.0: Fast Topological Querying and Sorting
+#### Maya API 2.0: Fast Topological Querying, Sorting, and Vector Calculations
 - Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python Api 2.0
 (MIterators, MFNMesh etc.) for mesh traversal and topological sorting. MVector
 and MMatrix are used for solver calculations.
