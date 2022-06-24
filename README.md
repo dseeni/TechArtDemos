@@ -2,7 +2,7 @@
 
 # Technical Art Demos
 
-## Maya Unchamfer & Unbevel (Geometric Reconstruction Case Study)
+## Maya Unchamfer & Unbevel (Geometric Reconstruction)
 - Implemented a Vector Calculus Library similar to Blender's mathutils.geometry
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
