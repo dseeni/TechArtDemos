@@ -132,27 +132,27 @@ option, and select the edge that yields the minimum distance to intersection
 
 **Unbevel can be summarized in these 10 steps:**
 <ul>
-<li>User Selection: 2 Edges adjacent to the beveled geometry</li>
+<li>1. User Selection: 2 Edges adjacent to the beveled geometry</li>
 	<ul>
 	<li>The World-Space coordinates of each edge-vertex are stored for edge
 	selection post geometry modification, when vertex IDs have changed</li>
 	</ul>
-<li>Edge ring selection is triggered selecting interior edge loops</li>
-<li>Interior edge ring is select, minus the original user selection</li>
-<li>Interior edge ring is converted to edge loops and deleted</li>
-<li>Vertex IDs have changed due to topological modification of the mesh</li>
+<li>2. Edge ring selection is triggered selecting interior edge loops</li>
+<li>3. Interior edge ring is select, minus the original user selection</li>
+<li>4. Interior edge ring is converted to edge loops and deleted</li>
+<li>5. Vertex IDs have changed due to topological modification of the mesh</li>
 	<ul>
-	<li> Using the original edges World-Space coordinates, edge centers are
+	<li>Using the original edges World-Space coordinates, edge centers are
 	calculated via Maya API calls to MPointOnMesh, retriving the new
 	closest edge IDs of the original selection despite ID's being different</li>
 	<li> Edge selection is converted to Faces</li>
 	</ul>
 	
-<li>The Common Face for each convert2faces per edge conversion is filtered</li>
-<li>This face is converted to edges</li>
-<li>The original selection edges are removed</li>
-<li>Edge Ring selection is triggered</li>
-<li>PolyUnChamfer is called</li>
+<li>6. The Common Face for each convert2faces per edge conversion is filtered</li>
+<li>7. This face is converted to edges</li>
+<li>8. The original selection edges are removed</li>
+<li>9. Edge Ring selection is triggered</li>
+<li>10. PolyUnChamfer is called</li>
 </ul>
 
 -----------------------------------------------------------------------
