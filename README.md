@@ -22,7 +22,7 @@ scenarios leveraging Maya API 2.0 (see below)
 final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
 and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
 
-#### Edge-Vertex valence pair values are mapping to one of the following solvers:
+#### *Edge-Vertex valence pair values are mapping to one of the following solvers:*
 
 #### Skew lines Solver
 - A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
