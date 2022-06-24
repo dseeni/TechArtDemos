@@ -2,24 +2,24 @@
 
 # Technical Art Demos
 
-## Unchamfer & Unbevel (Geometric Reconstruction)
+## Maya Unchamfer & Unbevel (Geometric Reconstruction Case Study)
 - Implemented a Vector Calculus Library similar to Blender's mathutils.geometry
+covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
-
-### Skew lines Solver
+#### Skew lines Solver
 - A 3D implementation of the CLosest Point of Approach Algorithim (Collison Detection):
 - https://math.ucr.edu/~res/math133/skew-lines.pdf
 
-### Line Line Intersectsion Solver
+#### Line Line Intersectsion Solver
 - Graphics Gems Volume 2 Page 326 sample code:
 - http://www.realtimerendering.com/resources/GraphicsGems/gemsii/xlines.c
 
 
-### Line Plane Intersectsion Solver
+#### Line Plane Intersectsion Solver
 - https://handwiki.org/wiki/Line%E2%80%93plane_intersection
 
-### Plane Plane Intersection Solver
+#### Plane Plane Intersection Solver
 
 
 -- Solvers are triggered on a per edge basis leveraging Maya API 2.0's quick querying mechanism
