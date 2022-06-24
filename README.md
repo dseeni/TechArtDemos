@@ -14,10 +14,12 @@ and topological sorting as well as for solver calculations.
 ### Maya Python cmds Component Transformation and Mesh merging
 - After solver calculations and topological sorting are done via the Maya API
 final mesh manipulation is pushed to Maya Cmds. This allows for the tools to
-take advantage of Maya's built in undo, given that geometry modifier based
-plugins have very little documentation, especially for API 2.0. A custom
-node plugin was attempted, however it was abandoned due to lack of support and
-documentation.
+take advantage of Maya's built-in undo, given that geometry modifying plugins
+have very little documentation, especially for API 2.0. 
+
+A custom node plugin was attempted, however it was abandoned due to lack of
+recent support and documentation.
+
 - Further Reading on PolyModifier with API 1.0:
 https://download.autodesk.com/us/maya/2009help/api/poly_modifier_8py-example.html
 
