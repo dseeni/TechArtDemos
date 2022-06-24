@@ -132,7 +132,20 @@ Unbevel can be summarized in these 10 steps:
 1. User Selection -> 2 Edges
 	- The World-Space coordinates of each edge are stored for edge
 	selection post geometry modification, when vertex IDs have changed.
-2. adsfasdf
+2. Edge ring selection is triggered selecting interior edge loops
+3. Interior edge ring is select, minus the original user selection
+4. Interior edge ring is converted to edge loops and deleted
+5. Vertex IDs have changed due to topological modification of the mesh
+	- Using the original edges World-Space coordinates, edge centers are
+	calculated via Maya API calls to MPointOnMesh, retriving the new
+	closest edge IDs of the original selection despite ID's being different
+	- Edge selection is converted to Faces
+	
+6. The Common Face for each convert2faces per edge conversion is filtered
+7. This face is converted to edges
+8. The original selection edges are removed
+9. Edge Ring selection is triggered
+10. PolyUnChamfer is called
 
 -----------------------------------------------------------------------
 
