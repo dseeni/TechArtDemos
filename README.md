@@ -64,36 +64,37 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 ![](./DemoExamples/UnchamferCornerCase.gif)
 
-**Skew Line Solver (4,4)**
+-----------------------------------------------------------------------
+**Skew Line Solver (4,4):**
 ```
 - The most common case, where no precise intersection exists so Skew is called.
 ```
 ![](./DemoExamples/UnChamfer43and33and44.gif)
 
-**Line Line Solver (4,4)**
+-----------------------------------------------------------------------
+**Line Line Solver (4,4):**
 ```
 - The easiest case wherein a perfect intersection exists and no CPA Skew solver
 is required.
 ```
 ![](./DemoExamples/UnchamferStrict44.gif)
 
-**Plane Plane Solver (3,3)**
+-----------------------------------------------------------------------
+**Plane Plane Solver (3,3):**
 ```
 - Rare topology case when you partial chamfer side of a cube
 ```
-
-**Plane Plane Solver (3,3)Demo:**
 ![](./DemoExamples/EasyAimPrimAlignAIM.gif)
-
-**Line Plane Solver (4,3)**
+-----------------------------------------------------------------------
+**Line Plane Solver (4,3):**
 ```
 -  Common topology when you chamfer a cylinder whose top face is an N-gon or
 when you chamfer the top of a cube
 ```
-**Line Plane Solver (4,3)Demo:**
 ![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 
-**Multi Line Plane Solver (4+,4)**
+-----------------------------------------------------------------------
+**Multi Line Plane Solver (4+,4):**
 ```
 - A rare topological case wherein there are more than 4 edges connected to one
 vertex edge (see example below).
@@ -102,8 +103,8 @@ In this instance UnChamfer will run a skew lines solver on each potential edge
 option, and select the edge the yields the minimum distance to intersection
 (CPA), assuming no intersection is found.
 ```
-**Multi Line Plane Solver (4+,4) Demo**
 
+-----------------------------------------------------------------------
 
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a per edge basis
