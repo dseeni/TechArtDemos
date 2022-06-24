@@ -9,15 +9,13 @@
 - [Skew Lines Solver]
 
 ### Skew lines Solver
-
-
-
-
 - A 3D implementation of the CLosest Point of Approach Algorithim (Collison Detection):
 - https://core.ac.uk/download/pdf/74237799.pdf
 
-
 ### Line Line Intersectsion Solver
+- Graphics Gems Volume 2 Page 326 sample code:
+- http://www.realtimerendering.com/resources/GraphicsGems/gemsii/xlines.c
+
 
 ### Line Plane Intersectsion Solver
 
@@ -102,9 +100,6 @@ http://paulbourke.net/geometry/pointlineplane/
 CPA algorithim:
 https://core.ac.uk/download/pdf/74237799.pdf
 
-Graphics Gems Volume 2
-Page 326 sample code:
-http://www.realtimerendering.com/resources/GraphicsGems/gemsii/xlines.c
 
 Alternate case:
 non perfect intersections = CPA solver take the minimum on each vector then average
