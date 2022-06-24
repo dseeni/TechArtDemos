@@ -9,8 +9,8 @@
 - [Skew Lines Solver]
 
 ### Skew lines Solver
-A 3D implementation of the CLosest Point of Approach Algorithim (Collison Detectin):
-https://core.ac.uk/download/pdf/74237799.pdf
+-- A 3D implementation of the CLosest Point of Approach Algorithim (Collison Detection):
+-- https://core.ac.uk/download/pdf/74237799.pdf
 
 ### Line Line Intersectsion Solver
 
