@@ -40,12 +40,16 @@ Lets take one edge along an unchamfer ring as a simple example:
 	A valence combination of (3,4) -> Line Plane Intersection Solver
 
 In this way each additonal solver has a unique edge vertex valence pair as well:
-
 - Line Line Solver -> (4,4) The easiest case wherein a perfect intersection exists
+
 - Skew Line Solver -> (4,4) The most common case, where no precise intersection exists
+
 - Double Skew Sover -> (4,4) Wherein the given edge belongs to a trianglualr face in the case of corner chamfers
+
 - Plane Plane Solver -> (3,3) Rare topology case when you partial chamfer side of a cube
+
 - Line Plane Solver -> (4,3) Common topology when you chamfer a cylinder head
+
 - Line Plane Solver -> (4+,4) A rare topological case wherein there are more
 than 4 edges connected to one vertex edge (see example below). In this instance
 UnChamfer will run a skew lines solver on each potential edge option, and
