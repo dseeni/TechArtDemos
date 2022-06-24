@@ -11,9 +11,9 @@
 mesh traversal and topological sorting. MVector and MMatrix are used for
 solver calculations.
 
-- Implemented a Custom Vector Calculus Library similar to Blender's
+- Implemented a custom vector calculus library similar to Blender's
 mathutils.geometry, covering a wide array of intersection and collision
-scenarios (see below)
+scenarios leveraging Maya API 2.0 (see below)
 
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
@@ -22,8 +22,7 @@ scenarios (see below)
 final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
 and PolyUnbevel to take advantage of Maya's built-in Undo functionality.
 
-#### Prior to vertex transformation, selected edges are mapped via their edge-vertex
-valence pairs to one of the following solvers:
+#### Prior to vertex transformation, selected edges are mapped via their edge-vertex valence pair values to one of the following solvers:
 
 #### Skew lines Solver
 - A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
