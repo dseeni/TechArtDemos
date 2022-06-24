@@ -45,24 +45,28 @@ two vertices per selected edge*
 - Lets take one edge within a potential PolyUnchamfer input selection as a simple example:
 
 ```
-Let vertexA and vertexB compromise of the verticies of Edge1:
-vertexA valance = 4
+Let Vertex_A and Vertex_B compromise of the verticies of Edge1:
 
-vertexB valance = 3
+Vertex_A valance = 4
+Vertex_B valance = 3
 
 Valences are sorted from min to max wherein (4,3) -> (3,4)
+
 A valence pair of (3,4) => Line Plane Intersection Solver!
 ```
 
 In this way, each additional solver is triggered by a unique edge vertex
 valence pair as well:
 
+-----------------------------------------------------------------------
 **Double Skew Solver (4,4):**
 ```
 - The Double Skew Solver is triggered when selected edge(s) belong to a
 trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 ![](./DemoExamples/UnchamferCornerCase.gif)
+
+![](./DemoExamples/unbevel_example.jpg)
 
 -----------------------------------------------------------------------
 **Skew Line Solver (4,4):**
