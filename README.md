@@ -98,6 +98,7 @@ and no CPA Skew solver is required.
 A rare topological case, such as a partially chamfered cube.
 ```
 ![](./DemoExamples/UnChamfer33and43.gif)
+
 -----------------------------------------------------------------------
 **Line Plane Solver (4,3):**
 ```
