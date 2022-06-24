@@ -57,12 +57,11 @@ A valence pair of (3,4) => Line Plane Intersection Solver!
 In this way, each additional solver is triggered by a unique edge vertex
 valence pair as well:
 
-**Double Skew Solver (4,4)**
+**Double Skew Solver (4,4)Demo:**
 ```
 - Wherein the given edge belongs to a trianglualr face in the case of corner
 chamfers and no intersection exists.
 ```
-**Double Skew Solver (4,4)Demo:**
 ![](./DemoExamples/UnchamferCornerCase.gif)
 
 **Skew Line Solver (4,4)**
