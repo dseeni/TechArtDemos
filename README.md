@@ -7,8 +7,8 @@
 covering a wide array of intersection and collision scenarios (see below)
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
-### Maya API 2.0 Topological Sort
-- Maya Unbevel and Unchamfer required querying the mesh topology using Maya
+### Maya API 2.0 Topological Querying and Sorting
+- The Maya Unbevel and Unchamfer tools required querying the mesh topology using Maya
 Api 2.0 and mapping vertex valence combinations of each edge along an edge
 ring to one of the following solvers:
 
@@ -30,9 +30,7 @@ ring to one of the following solvers:
 topological sorting per solver is determined by the valence (connected edges per vertex) combination of
 each edges respective verticies
 
-
-#### Toplogical Sorting via Maya API 2.0 example
-
+### Toplogical Sorting via Maya API 2.0 example
 #### The topological sorting example:
 
 '''
