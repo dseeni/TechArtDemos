@@ -106,15 +106,16 @@ or when you chamfer the top face of a cube.
 ![](./DemoExamples/UnChamfer43.gif)
 
 -----------------------------------------------------------------------
-**Multi Line Plane Solver (4+,4):**
+**Multi-Line Plane Solver (4+,4):**
 ```
 A rare topological case wherein there are more than 4 edges connected to one
 Edge-Vertex (see example below).
 
 In this instance UnChamfer will run a skew lines solver on each potential edge
-option, and select the edge the yields the minimum distance to intersection
+option, and select the edge that yields the minimum distance to intersection
 (CPA), assuming no intersection is found.
 ```
+![](./DemoExamples/UnChamfer4+4.gif)
 
 -----------------------------------------------------------------------
 
