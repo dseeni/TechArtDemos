@@ -148,8 +148,8 @@ option, and select the edge that yields the minimum distance to intersection
 	<li> Edge selection is converted to Faces.</li>
 	</ul>
 	
-<li>6. The Common Face for each convert2faces per edge conversion is filtered.</li>
-<li>7. This face is converted to edges.</li>
+<li>6. The Common Face amongst each 'ConvertToFaces' call is filtered.</li>
+<li>7. Current face selection is converted to edges.</li>
 <li>8. The original selection edges are removed.</li>
 <li>9. Edge Ring selection is triggered.</li>
 <li>10. PolyUnChamfer is called.</li>
