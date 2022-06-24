@@ -3,10 +3,9 @@
 # Technical Art Demos
 
 ## Unchamfer & Unbevel (Geometric Reconstruction)
-- Implemented a custom math library in Maya similar to Blenders for Vector Calculus Operations
-- [Skew Lines Solver]
-- [Skew Lines Solver]
-- [Skew Lines Solver]
+- Implemented a Vector Calculus Library similar to Blender's mathutils.geometry
+- https://docs.blender.org/api/current/mathutils.geometry.html
+
 
 ### Skew lines Solver
 - A 3D implementation of the CLosest Point of Approach Algorithim (Collison Detection):
@@ -18,6 +17,35 @@
 
 
 ### Line Plane Intersectsion Solver
+- https://handwiki.org/wiki/Line%E2%80%93plane_intersection
+
+### Plane Plane Intersection Solver
+
+
+-- Solvers are triggered on a per edge basis leveraging Maya API 2.0's quick querying mechanism
+topological sorting per solver is determined by the valence (connected edges per vertex) combination of
+each edges respective verticies
+
+'''
+For example:
+	Let vertexA and vertexB compromise of the verticies of Edge1
+	VertexA valance = 4
+	VertexB valance = 3
+	valences are sorted from min to max (4,3) -> (3,4) for solver mapping purposes
+	A valence combination of (3,4) -> Line Plane Intersection Solver
+
+  solver_tag_dict = {
+    'lps': om.MIntArray(),
+    'skew' : om.MIntArray(),
+    'doublesolve' : om.MIntArray(),
+    'plane2plane' : om.MIntArray(),
+  }
+'''
+
+
+- Maya Api 2.0 topological queries result in blending between 3 solvers on a per edge basis
+	determined by vertex
+valence (connected edges per )
 
 
 
