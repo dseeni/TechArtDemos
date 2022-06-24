@@ -39,17 +39,19 @@ selection to one of the following solvers:
 #### Plane Plane Intersection Solver
 - https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/
 
-- Solvers are triggered on a per edge basis leveraging Maya API 2.0's quick
-querying mechanism topological sorting per solver is determined by the valence
-(connected edges per vertex) combination of each edges respective verticies
+#### Solvers are triggered on a per edge basis 
+- Leveraging Maya API 2.0 Mesh Function Sets topological sorting per
+edge solver is determined by the each edges dual vertex valence combination.
+Wherein valence refers to the number of connected edges per vertex, given
+two vertecies per selected edge.
 
 #### Topological Sorting Example:
 
-- Lets take one edge within an Unchamfer user input seleciton  as a simple example:
+- Lets take one edge within an Unchamfer user's input seleciton as a simple example:
 ```
 Let vertexA and vertexB compromise of the verticies of Edge1:
-VertexA valance = 4
-VertexB valance = 3
+vertexA valance = 4
+vertexB valance = 3
 Valences are sorted from min to max wherein (4,3) -> (3,4)
 A valence combination of (3,4) -> Line Plane Intersection Solver
 ```
