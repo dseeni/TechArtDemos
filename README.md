@@ -31,7 +31,7 @@ topological sorting per solver is determined by the valence (connected edges per
 each edges respective verticies
 
 #### The topological sorting example:
-```
+
 Lets take one edge within an unchamfer input seleciton  as a simple example:
 
 Let vertexA and vertexB compromise of the verticies of Edge1
