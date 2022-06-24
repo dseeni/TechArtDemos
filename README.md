@@ -15,7 +15,7 @@ https://core.ac.uk/download/pdf/74237799.pdf
 
 ## A Generic Hotkey Configuration Optimizer
 # Speed!!
-![](https://i.imgur.com/y2wd9rK.gif)
+![](https://i0.wp.com/scifiinterfaces.com/wp-content/uploads/2013/06/typing.gif)
 
 -- Optimize Artist Workflows with a more efficent Hotkey layout
 	---- Faster artists (more efficient)[x]
