@@ -68,15 +68,14 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 - The most common case, where no precise intersection exists so Skew is called.
 ```
-![](./DemoExamples/EasyAimPrimAlignAIM.gif)
+![](./DemoExamples/UnChamfer33and43.gif)
 
 **Line Line Solver (4,4)**
 ```
 - The easiest case wherein a perfect intersection exists and no CPA Skew solver
 is required.
 ```
-**Line Line Solver (4,4)Demo:**
-![](./DemoExamples/EasyAimPrimAlignAIM.gif)
+![](./DemoExamples/UnchamferStrict44.gif)
 
 **Plane Plane Solver (3,3)**
 ```
