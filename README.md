@@ -3,33 +3,37 @@
 # Technical Art Demos
 
 ## Unchamfer & Unbevel (Polygonal Reconstruction)
+- Implemented a custom math library in Maya similar to Blenders for Vector Calculus Operations
+- [Skew Lines Solver]
+- [Skew Lines Solver]
 - [Skew Lines Solver]
 
 ### SKEW LINES SOLVER
 CPA I IMPLEMENTED
 https://core.ac.uk/download/pdf/74237799.pdf
-Photoshop
-Maya
-Max
-Fusion360 was a 80K long single line crash editor lol
-Moi3d
-Modo
-Blender
-Zbrush
-Substance Designer
-Substance Painter
+
 
 ## A Generic Hotkey Configuration Optimizer
 
+-- Optimize Artist Workflows with a more efficent Hotkey layout
+	---- Faster artists (more efficient)[x]
+	---- Reduce Ulnar Deviation and RSI[x]
+	---- Healthy artists = Happy artists (ergonomics)[x]
+
+-- Extend and Document Artist settings automatically across multiple programs, including:
+-- Photoshop
+-- Maya
+-- Fusion360
+-- Moi3d
+-- Zbrush
+
+Parse Config Files and automatically generate an html page for easy reference:
+-- (Maya):
+
+-- (Photoshp):
+
 Hotkey framework for program reconfiguration
 
-Optimize UI the ui layout
-	Healthy artists (ergonomics)
-	Faster artists (more efficient)
-	Ulnar deviation
-	Allowing the hand to rest on the homerow
-	More creative artist -> easier to get in the flow
-	the comptuer gets out of the way
 
 Document the layout for east artist reference
 
