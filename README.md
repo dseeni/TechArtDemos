@@ -135,10 +135,10 @@ option, and select the edge that yields the minimum distance to intersection
 	<li>The World-Space coordinates of each edge-vertex are stored for edge
 	selection post geometry modification, when vertex IDs have changed</li>
 	</ul>
-<li> Edge ring selection is triggered selecting interior edge loops</li>
-<li> Interior edge ring is select, minus the original user selection</li>
-<li> Interior edge ring is converted to edge loops and deleted</li>
-<li> Vertex IDs have changed due to topological modification of the mesh</li>
+<li>Edge ring selection is triggered selecting interior edge loops</li>
+<li>Interior edge ring is select, minus the original user selection</li>
+<li>Interior edge ring is converted to edge loops and deleted</li>
+<li>Vertex IDs have changed due to topological modification of the mesh</li>
 	<ul>
 	<li> Using the original edges World-Space coordinates, edge centers are
 	calculated via Maya API calls to MPointOnMesh, retriving the new
@@ -146,11 +146,12 @@ option, and select the edge that yields the minimum distance to intersection
 	<li> Edge selection is converted to Faces</li>
 	</ul>
 	
-<li> The Common Face for each convert2faces per edge conversion is filtered</li>
-<li> This face is converted to edges</li>
-<li> The original selection edges are removed</li>
-<li> Edge Ring selection is triggered</li>
-</ul> PolyUnChamfer is called
+<li>The Common Face for each convert2faces per edge conversion is filtered</li>
+<li>This face is converted to edges</li>
+<li>The original selection edges are removed</li>
+<li>Edge Ring selection is triggered</li>
+<li>PolyUnChamfer is called</li>
+</ul>
 
 -----------------------------------------------------------------------
 
