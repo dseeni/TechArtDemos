@@ -68,6 +68,7 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 
 <details>
   <summary>Double Solve Diagram</summary>
+
 ![](./DemoExamples/unbevel_example.jpg)
 </details>
 
