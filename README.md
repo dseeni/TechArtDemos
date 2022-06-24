@@ -109,7 +109,7 @@ or when you chamfer the top face of a cube.
 **Multi-Line Plane \ Skew Line Solver (4+,4):**
 ```
 A rare topological case wherein there are more than 4 edges connected to one
-Edge-Vertex (see example below).
+Edge-Vertex (see example below)
 
 In this instance UnChamfer will run a skew lines solver on each potential edge
 option, and select the edge that yields the minimum distance to intersection
@@ -280,7 +280,6 @@ in a skew like effect per face towards the target plane alignment
 Select 3 vertex of a non planar face and planar align that face while respecting
 surround geometry
 
-test
 
 
 
