@@ -12,9 +12,12 @@
 mesh traversal and topological sorting. MVector and MMatrix are used for
 solver calculations.
 
-- Implemented a custom vector calculus library similar to Blender's
-mathutils.geometry, covering a wide array of intersection and collision
-scenarios leveraging Maya API 2.0 (see below)
+- Implemented a custom vector calculus library within Maya, similar to
+Blender's mathutils.geometry, covering a wide array of intersection and
+collision scenarios leveraging Maya API 2.0 (see below). Since all vector
+and matrix calculations are done utilizing Maya API 2.0 exclusively, no
+dependencies are in place for Numpy and backwards compatibility with
+Maya 2018 - 2022 is maintained without an additional third-party package.
 
 - https://docs.blender.org/api/current/mathutils.geometry.html
 
@@ -147,7 +150,7 @@ option, and select the edge that yields the minimum distance to intersection
 	closest edge IDs of the original selection despite ID's being different.</li>
 	<li> Edge selection is converted to Faces.</li>
 	</ul>
-	
+
 <li>6. The Common Face amongst each 'ConvertToFaces' call is filtered.</li>
 <li>7. Current face selection is converted to edges.</li>
 <li>8. The original selection edges are removed.</li>
@@ -312,6 +315,7 @@ in a skew like effect per face towards the target plane alignment
 
 Select 3 vertex of a non planar face and planar align that face while respecting
 surround geometry
+
 
 
 
