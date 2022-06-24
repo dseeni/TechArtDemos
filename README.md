@@ -5,14 +5,17 @@
 ![](./DemoExamples/UnbevelUnchamfer.gif)
 
 ### Project Overview:
-- Implemented a Vector Calculus Library similar to Blender's mathutils.geometry,
-covering a wide array of intersection and collision scenarios (see below)
-- https://docs.blender.org/api/current/mathutils.geometry.html
 
 #### Maya API 2.0: Fast Topological Querying and Sorting
 - Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python Api 2.0 (MFNMesh etc.)for
 mesh traversal and topological sorting. MVector and MMatrix are used for
 solver calculations.
+
+- Implemented a Custom Vector Calculus Library similar to Blender's
+mathutils.geometry, covering a wide array of intersection and collision
+scenarios (see below)
+
+- https://docs.blender.org/api/current/mathutils.geometry.html
 
 #### Maya Cmds: Component Transformation And Topology Merging
 - After solver calculations and topological sorting are done via the Maya API,
@@ -115,7 +118,6 @@ option, and select the edge the yields the minimum distance to intersection
 ```
 
 -----------------------------------------------------------------------
-
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a per edge basis
 	determined by vertex
