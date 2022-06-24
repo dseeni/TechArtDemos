@@ -61,7 +61,7 @@ Thus a Valence Pair of (4,3) => Line Plane Solver(3,4)! Simple!
 ```
 
 In this way, each additional solver is triggered by a unique edge-vertex
-Valence Pair, as noted in the following section.
+Valence Pair, as noted in the following section:
 
 -----------------------------------------------------------------------
 **Recursive 3-Way Skew Lines Solver (4,4):**
