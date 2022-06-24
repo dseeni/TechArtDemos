@@ -17,7 +17,7 @@ Substance Designer
 Substance Painter
 
 ## A Generic Hotkey Configuration Optimizer
-## -----------------------------------------------------------------------
+-----------------------------------------------------------------------
 Hotkey framework for program reconfiguration
 
 Optimize UI the ui layout
