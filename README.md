@@ -67,15 +67,18 @@ chamfers and no intersection exists.
 
 **Line Plane Solver -> (4,3)**
 ```
--  Common topology when you chamfer a cylinder N-gon top face
+-  Common topology when you chamfer a cylinder whose top face is an N-gon or
+when you chamfer the top of a cube
 ```
 
 **Multi Line Plane Solver -> (4+,4)** 
 ```
 - A rare topological case wherein there are more than 4 edges connected to one
-vertex edge (see example below). In this instance UnChamfer will run a skew
-lines solver on each potential edge option, and select the edge the yields the
-minimum distance to intersection, assuming no intersection is found.
+vertex edge (see example below). 
+
+In this instance UnChamfer will run a skew lines solver on each potential edge
+option, and select the edge the yields the minimum distance to intersection
+(CPA), assuming no intersection is found.
 ```
 
 - Maya Api 2.0 topological queries result in blending between 3 solvers on a per edge basis
