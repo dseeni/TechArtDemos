@@ -37,10 +37,11 @@ manipulation and undo.
 - Much attention was paid into data organization during script execution. Since
 API calls tend to incur a heavy performance penalty, at a high level, script
 execution first deals with the Maya API exclusively, querying necessary
-component level information and making nessary solver calculations. When
-transformations are finalized, all transformations are pushed to a single Maya
-CMDS call. This also allows for free undo functionality, despite heavy use of
-the Maya API.
+component level information with the MIterator classes, and making nessary
+solver calculations with MMatrix and MVector. When transformations are
+finalized, all component transformations are pushed to a single Maya CMDS call.
+This allows for free undo functionality, despite heavy use of the Maya
+API.
 
 #### *Edge-Vertex Valence Pair Values map to one of the following Solvers:*
 
