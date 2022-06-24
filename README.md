@@ -29,7 +29,7 @@ ring to one of the following solvers:
 topological sorting per solver is determined by the valence (connected edges per vertex) combination of
 each edges respective verticies
 
-### The topological sorting example:
+#### The topological sorting example:
 
 '''
 Lets take one edge along an unchamfer ring as a simple example:
@@ -41,9 +41,9 @@ Lets take one edge along an unchamfer ring as a simple example:
 
 In this way each additonal solvers have a unique vertex valence pair configuration as well:
 
-- Line Line Solver -> (4,4)
-- Skew Line Solver -> (4,4) Assuming no intersection exists
-- Double Skew Sover -> (4,4) Wherein the edge belongs to a trianglualr face in the case of corner chamfers
+- Line Line Solver -> (4,4) The easiest case wherein a perfect intersection exists
+- Skew Line Solver -> (4,4) The most common case, where no precise intersection exists
+- Double Skew Sover -> (4,4) Wherein the given edge belongs to a trianglualr face in the case of corner chamfers
 - Plane Plane Solver -> (3,3) Rare topology case when you partial chamfer side of a cube
 - Line Plane Solver -> (4,3) Common topology when you chamfer a cylinder head
 '''
