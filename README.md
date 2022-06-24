@@ -61,7 +61,7 @@ valence pair as well:
 -----------------------------------------------------------------------
 **Double Skew Solver (4,4):**
 ```
-- The Double Skew Solver is triggered when selected edge(s) belong to a
+The Double Skew Solver is triggered when selected edge(s) belong to a
 trianglualr face in the case of corner chamfers and no intersections exists.
 ```
 ![](./DemoExamples/UnchamferCornerCase.gif)
@@ -71,14 +71,14 @@ trianglualr face in the case of corner chamfers and no intersections exists.
 -----------------------------------------------------------------------
 **Skew Line Solver (4,4):**
 ```
-- The most common case, where no precise intersection exists so Skew is called.
+The most common case, where no precise intersection exists so Skew is called.
 ```
 ![](./DemoExamples/UnChamfer43and33and44.gif)
 
 -----------------------------------------------------------------------
 **Line Line Solver (4,4):**
 ```
-- The easiest case wherein a perfect intersection exists and no CPA Skew solver
+The easiest case wherein a perfect intersection exists and no CPA Skew solver
 is required.
 ```
 ![](./DemoExamples/UnchamferStrict44.gif)
@@ -86,13 +86,13 @@ is required.
 -----------------------------------------------------------------------
 **Plane Plane Solver (3,3):**
 ```
-- Rare topology case when you partial chamfer side of a cube
+Rare topology case when you partial chamfer side of a cube
 ```
 ![](./DemoExamples/EasyAimPrimAlignAIM.gif)
 -----------------------------------------------------------------------
 **Line Plane Solver (4,3):**
 ```
--  Common topology when you chamfer a cylinder whose top face is an N-gon or
+ Common topology when you chamfer a cylinder whose top face is an N-gon or
 when you chamfer the top of a cube
 ```
 ![](./DemoExamples/EasyAimPrimAlignAIM.gif)
@@ -100,7 +100,7 @@ when you chamfer the top of a cube
 -----------------------------------------------------------------------
 **Multi Line Plane Solver (4+,4):**
 ```
-- A rare topological case wherein there are more than 4 edges connected to one
+A rare topological case wherein there are more than 4 edges connected to one
 vertex edge (see example below).
 
 In this instance UnChamfer will run a skew lines solver on each potential edge
