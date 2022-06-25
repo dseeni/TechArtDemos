@@ -163,7 +163,7 @@ option, and select the edge that yields the minimum distance to intersection
 <li>2. Edge ring selection is triggered, selecting the interior edge loops.</li>
 <li>3. The original selection is excluded from the current ring selection.</li>
 <li>4. This interior edge ring is extended full edge loops and deleted.</li>
-<li>5. Vertex IDs have changed due to topological modification of the mesh.</li>
+<li>5. Edge and Vertex IDs have changed due to topological modification of the mesh.</li>
 	<ul>
 	<li>Using each original edge's World-Space coordinates, edge centers are
 	calculated and projected to the mesh via Maya API calls to MPointOnMesh.</li>
@@ -177,7 +177,7 @@ option, and select the edge that yields the minimum distance to intersection
 	</ul>
 <li>6. The common face amongst each 'ConvertToFaces' call is filtered and
 selected.</li>
-<li>7. Current face selection is converted to edges.</li>
+<li>7. The current face selection is converted to edges.</li>
 <li>8. The original selection edges are removed.</li>
 <li>9. Edge Ring selection is triggered.</li>
 <li>10. PolyUnChamfer is called.</li>
@@ -185,17 +185,27 @@ selected.</li>
 
 -----------------------------------------------------------------------
 
-- Maya Api 2.0 topological queries result in blending between 3 solvers on a
-per edge basis determined by vertex valence (connected edges per )
+## SuperCharge Configurator
+### An Extensible Hotkey Layout Optimizer Supporting Multiple DCC Applications
 
-## A Generic Hotkey Configuration Optimizer
-### SuperCharge Maya/Photoshop/Zbrush/Fusion360/Moi3d!!
+#### SuperCharge supports Maya, Photoshop, Zbrush, Fusion360, Moi3d so far!
+
 ![](https://i0.wp.com/scifiinterfaces.com/wp-content/uploads/2013/06/typing.gif)
 
--- Optimize Artist Workflows with a more efficent Hotkey layout
-	---- Faster artists (more efficient)[x]
-	---- Reduce Ulnar Deviation and RSI[x]
-	---- Healthy artists = Happy artists (ergonomics)[x]
+#### Optimize Artist Workflows with a more efficent hotkey layout
+
+- [x] Increase Artist Productivity with a fully customizable layout.
+- [x] Reduce Ulnar Deviation and RSI by prioritizing the home row keys whilst
+	still being flexible enough for full customization if needed.
+- [x] Easily accomdate new applications as production needs change
+- [x] Integrate a Python to Autohotkey Parser, allowing for mapping overrides
+	that are not natively supported in a DCC application. Autohotkey code
+	is procedurally generated and commented for easy reference.
+- [x] Fully automate the generation of documentation for each keyboard layout
+	via an HTML webpage, including Autohotkey mappings.
+- [x] Generate native application configuration data, such as UserConfig.kys
+file (Photoshop), UserHotkeyString XML (Fusion360), Moi.ini (Moi3d),
+StartupHotkeys.txt (Zbrush), etc.
 
 -- Extend and Document Artist settings automatically across multiple programs, including:
 -- Photoshop
