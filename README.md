@@ -25,7 +25,7 @@ complications.
 
 #### Maya Cmds: Component Transformation And Topology Merging
 - Much of the heavy lifting for these tools is done within the Maya API.
-However, after solver calculations and topological sorting are finished,
+After solver calculations and topological sorting are finished,
 final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
 and PolyUnbevel to take advantage of Maya's built-in Undo functionality without
 the overhead of a custom polyModifier subclassed plugin. This represents a best
@@ -40,8 +40,8 @@ execution first deals with the Maya API exclusively, querying necessary
 component level information with the MIterator classes, and making nessary
 solver calculations with MMatrix and MVector. When transformations are
 finalized, all component transformations are pushed to a single Maya CMDS call.
-This allows for free undo functionality, despite heavy use of the Maya
-API.
+This allows for these tools to leverage Maya's built-in undo functionality,
+despite heavy use of the Maya API.
 
 #### *Edge-Vertex Valence Pair Values map to one of the following Solvers:*
 
@@ -151,22 +151,26 @@ option, and select the edge that yields the minimum distance to intersection
 
 ![](./DemoExamples/UnBevelSteps.jpg)
 
-**Unbevel can be summarized in these 10 steps:**
+#### Unbevel can be summarized in these 10 steps:
 <ul>
-<li>1. User Selection: 2 Edges adjacent to the beveled geometry.</li>
+<li>1. User Selection: 2 Edges -- adjacent to the beveled geometry.</li>
 	<ul>
 	<li>The World-Space coordinates of each edge-vertex are stored for edge
-	selection post geometry modification, when vertex IDs have changed.</li>
+	selection post geometry modification, when vertex and edge IDs have
+	changed.</li>
 	</ul>
 <li>2. Edge ring selection is triggered selecting interior edge loops.</li>
-<li>3. Interior edge ring is select, minus the original user selection.</li>
-<li>4. Interior edge ring is converted to edge loops and deleted.</li>
+<li>3. The original selection is excluded from the current selection.</li>
+<li>4. This interior edge ring is converted to edge loops and deleted.</li>
 <li>5. Vertex IDs have changed due to topological modification of the mesh.</li>
 	<ul>
-	<li>Using the original edges World-Space coordinates, edge centers are
-	calculated via Maya API calls to MPointOnMesh, retriving the new
-	closest edge IDs of the original selection despite ID's being different.</li>
-	<li> Edge selection is converted to Faces.</li>
+	<li>Using each original edge's World-Space coordinates, edge centers are
+	calculated via Maya API calls to MPointOnMesh.</li>
+	<li>A minimum delta vector is calculated between the original edge
+	vector center point and the mid point of each newly created edge. </li>
+	<li> This allows recovery of the original edge selection, despite the
+	edges having a newly assigned edge ID.</li>
+	<li> The original edge selection is then converted to faces.</li>
 	</ul>
 
 <li>6. The Common Face amongst each 'ConvertToFaces' call is filtered.</li>
