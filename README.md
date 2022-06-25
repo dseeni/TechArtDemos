@@ -155,25 +155,28 @@ option, and select the edge that yields the minimum distance to intersection
 <ul>
 <li>1. User Selection: 2 Edges -- adjacent to the beveled geometry.</li>
 	<ul>
-	<li>The World-Space coordinates of each edge-vertex are stored for edge
-	selection post geometry modification, when vertex and edge IDs have
-	changed.</li>
+	<li>The World-Space coordinates of each edge-vertex are stored for each
+	edge, allowing for edge selection recorvery post geometry modification,
+	when vertex and edge IDs have changed and the original selection IDs
+	are no longer valid.</li>
 	</ul>
-<li>2. Edge ring selection is triggered selecting interior edge loops.</li>
-<li>3. The original selection is excluded from the current selection.</li>
-<li>4. This interior edge ring is converted to edge loops and deleted.</li>
+<li>2. Edge ring selection is triggered, selecting the interior edge loops.</li>
+<li>3. The original selection is excluded from the current ring selection.</li>
+<li>4. This interior edge ring is extended full edge loops and deleted.</li>
 <li>5. Vertex IDs have changed due to topological modification of the mesh.</li>
 	<ul>
 	<li>Using each original edge's World-Space coordinates, edge centers are
-	calculated via Maya API calls to MPointOnMesh.</li>
+	calculated and projected to the mesh via Maya API calls to MPointOnMesh.</li>
 	<li>A minimum delta vector is calculated between the original edge
-	vector center point and the mid point of each newly created edge. </li>
-	<li> This allows recovery of the original edge selection, despite the
+	vector mid-point and the mid-point of each newly created edge. </li>
+	<li> The original edge selections yield MPointOnMesh delta vectors with
+	a magnitude close to 0.</li>
+	<li>This allows recovery of the original edge selection, despite the
 	edges having a newly assigned edge ID.</li>
 	<li> The original edge selection is then converted to faces.</li>
 	</ul>
-
-<li>6. The Common Face amongst each 'ConvertToFaces' call is filtered.</li>
+<li>6. The common face amongst each 'ConvertToFaces' call is filtered and
+selected.</li>
 <li>7. Current face selection is converted to edges.</li>
 <li>8. The original selection edges are removed.</li>
 <li>9. Edge Ring selection is triggered.</li>
