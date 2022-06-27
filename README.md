@@ -17,7 +17,7 @@ mathutils.geometry, covering a wide array of intersection and collision
 scenarios (examples below). Since all vector and matrix calculations are done
 utilizing Maya API 2.0 exclusively, no dependencies are in place for Numpy and
 backwards compatibility with Maya 2018 - 2022 is maintained without an
-additional third-party package elminating any potential distribution
+additional third-party package eliminating any potential distribution
 complications.
 
 - [mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html)
@@ -44,7 +44,7 @@ despite heavy use of the Maya API.
 
 #### *Edge-Vertex Valence Pair Values map to one of the following algorithms:*
 
-#### Skew lines Cloest Point of Approach Solver
+#### Skew lines Closest Point of Approach Solver
 - *A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection*
 - [Distance of closest approach](https://en.wikipedia.org/wiki/Distance_of_closest_approach)
 - [3d coordinate geometry skew lines](https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/)
@@ -66,10 +66,6 @@ two vertices per selected edge*
 
 #### Topological Inference Example:
 
-- How can we best figure out which of the previous geometric algorithims is
-best suited for 
-
-
 - Lets take one edge within a potential PolyUnchamfer input selection as a simple example:
 
 ```
@@ -78,7 +74,7 @@ Let Vertex_A and Vertex_B compromise the edge-verticies of Edge1:
 Vertex_A valance = 4
 Vertex_B valance = 3
 
-Valence values are sorted from min to max wherein (4,3) -> (3,4)
+Valence pair values are sorted in ascending wherein (4,3) -> (3,4)
 
 Thus a Valence Pair of (4,3) => Line Plane Solver(3,4)
 Simple!
@@ -315,6 +311,7 @@ purely based on cursor position no clicking
 then snap and align
 predictive
 always Y UP
+works with vertexs edges and faces too
 
 Smart Tool Handle Activation: (Lazy Boi Mode)
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
