@@ -1,13 +1,12 @@
 # Technical Art Demos
 
-## Maya PolyUnchamfer & PolyUnbevel (Geometric Reconstruction)
+## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
 ### PolyUnchamfer & PolyUnbevel Timelape:
------------------------------------------------------------------------
 ![](./DemoExamples/UnbevelUnchamfer.gif)
------------------------------------------------------------------------
 ### PolyUnchamfer Project Overview:
 
 #### Maya API 2.0: Fast Topological Querying, Sorting, and Vector Calculations
+
 - Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python Api 2.0
 (MIterators, MFNMesh etc.) for mesh traversal and topological sorting. MVector
 and MMatrix are used for solver calculations.
@@ -21,7 +20,7 @@ backwards compatibility with Maya 2018 - 2022 is maintained without an
 additional third-party package elminating any potential distribution
 complications.
 
-- https://docs.blender.org/api/current/mathutils.geometry.html
+- [mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html)
 
 #### Maya Cmds: Component Transformation And Topology Merging
 - Much of the heavy lifting for these tools is done within the Maya API.
@@ -43,21 +42,21 @@ finalized, all component transformations are pushed to a single Maya CMDS call.
 This allows for these tools to leverage Maya's built-in undo functionality,
 despite heavy use of the Maya API.
 
-#### *Edge-Vertex Valence Pair Values map to one of the following Solvers:*
+#### *Edge-Vertex Valence Pair Values map to one of the following algorithms:*
 
 #### Skew lines Cloest Point of Approach Solver
-- A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection:
-- https://en.wikipedia.org/wiki/Distance_of_closest_approach
-- https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/
+- *A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection*
+- [Distance of closest approach](https://en.wikipedia.org/wiki/Distance_of_closest_approach)
+- [3d coordinate geometry skew lines](https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/)
 
 #### Line Line Intersection Solver
-- https://mathemerize.com/point-of-intersection-of-two-lines-in-3d/
+- [3D Line Intersections](https://mathemerize.com/point-of-intersection-of-two-lines-in-3d/)
 
 #### Line Plane Intersection Solver
-- https://handwiki.org/wiki/Line%E2%80%93plane_intersection
+- [Line Plane Intersection](https://handwiki.org/wiki/Line%E2%80%93plane_intersection)
 
 #### Plane Plane Intersection Solver
-- https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/
+- [Dual Plane Intersection](https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/)
 
 #### Solvers are triggered on a per edge basis
 - Leveraging Maya API 2.0 Mesh Function Sets, topological sorting per
@@ -65,24 +64,28 @@ edge solver is determined by the each edge's edge-vertex valence pair.
 - *Valence refers to the number of connected edges per vertex, with
 two vertices per selected edge*
 
-#### Topological Sorting Example:
+#### Topological Inference Example:
+
+- How can we best figure out which of the previous geometric algorithims is
+best suited for 
+
 
 - Lets take one edge within a potential PolyUnchamfer input selection as a simple example:
 
 ```
-Let Vertex_A and Vertex_B compromise of the verticies of Edge1:
+Let Vertex_A and Vertex_B compromise the edge-verticies of Edge1:
 
 Vertex_A valance = 4
 Vertex_B valance = 3
 
-Valences are sorted from min to max wherein (4,3) -> (3,4)
+Valence values are sorted from min to max wherein (4,3) -> (3,4)
 
 Thus a Valence Pair of (4,3) => Line Plane Solver(3,4)
 Simple!
 ```
 
-In this way, each additional solver is triggered by a unique edge-vertex
-Valence Pair on a per edge basis, as noted in the following section:
+In this way, each subsequent solver can be potentially triggered by a unique
+edge-vertex valence pair on a per edge basis, as noted in the following section:
 
 -----------------------------------------------------------------------
 **Recursive 3-Way Skew Lines Solver (4,4):**
@@ -123,8 +126,8 @@ A rare topological case, such as a partially chamfered cube.
 -----------------------------------------------------------------------
 **Line Plane Solver (4,3):**
 ```
-A common topological when a cylinder whose top face is an N-gon is chamfered
-or when you chamfer the top face of a cube.
+A common topological case when a cylinder whose top face is an N-gon is
+chamfered or when you chamfer the top face of a cube.
 ```
 ![](./DemoExamples/UnChamfer43.gif)
 
@@ -134,7 +137,7 @@ or when you chamfer the top face of a cube.
 A rare topological case wherein there are more than 4 edges connected to one
 Edge-Vertex (see example below).
 
-In this instance UnChamfer will run a skew lines solver on each potential edge
+In this instance, UnChamfer will run a skew lines solver on each potential edge
 option, and select the edge that yields the minimum distance to intersection
 (CPA), assuming no intersection is found.
 ```
