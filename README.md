@@ -233,13 +233,24 @@ Photoshop example
 
 ![](./DemoExamples/PhotoshopHotkeyExampleCropped.png)
 
+include large images as links
+
+### Generating the html template
+html psd script
+
+### Binding Front End UI names to config file naming
+
+### Integrating new applications
+
 Look at photoshops configuration file
 reverse engineer the data storage format and ordering
 derive 3 main command types
 	static unique id
 	dynamic no unique id
 	tools stackable groups vs non stackable
+
 Flood the UI with all possible keycombinations
+
 build a map between UI representation of a command and its internal xml storage representation
 determine a sort order for left vs right handed artists
 log artist sessions in photoshop and sort most used vs least used commands according to frequency
@@ -257,6 +268,7 @@ mappings I parse those sequence strings to be readable in html visualizer,
 which is a simple webpage whose html slots (html hotkey sequence as
 key)at each keyboard location take in a text string
 (value)
+
  ------------------------------------------------------------------------------
 ## MAYA PROJECTS BREAKDOWN
 Unchamfer ->
