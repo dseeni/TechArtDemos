@@ -84,7 +84,9 @@ In this way, each subsequent solver can be potentially triggered by a unique
 edge-vertex valence pair on a per edge basis, as noted in the following section:
 
 -----------------------------------------------------------------------
+
 **Recursive 3-Way Skew Lines Solver (4,4):**
+
 ```
 The 3-Way Skew Solver is triggered when selected edge(s) belong to a
 trianglualr face in the case of corner chamfers and no intersections exists.
