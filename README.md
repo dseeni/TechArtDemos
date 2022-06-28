@@ -230,6 +230,7 @@ StartupHotkeys.txt (Zbrush), etc.
 Photoshop example
 
 ![](./DemoExamples/HotkeyChartColorKeys.png)
+
 ![](./DemoExamples/PhotoshopHotkeyExampleCroppedSmall.png)
 
 Look at photoshops configuration file
