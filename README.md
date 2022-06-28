@@ -158,6 +158,7 @@ option, and select the edge that yields the minimum distance to intersection
 	edge, allowing for edge selection recorvery post geometry modification,
 	when vertex and edge IDs have changed and the original selection IDs
 	are no longer valid.</li>
+	<li>In the case of </li>
 	</ul>
 <li>2. Edge ring selection is triggered, selecting the interior edge loops.</li>
 <li>3. The original selection is excluded from the current ring selection.</li>
