@@ -192,47 +192,46 @@ selected.</li>
 ## SuperCharge Configurator
 ### An Extensible Hotkey Layout Optimizer Supporting Multiple DCC Applications
 
-#### SuperCharge supports Maya, Photoshop, Zbrush, Fusion360, Moi3d so far!
-
+#### SuperCharge supports Maya, Photoshop, Zbrush, Fusion360, Moi3d, and 3DCoat so far!
 ![](https://i0.wp.com/scifiinterfaces.com/wp-content/uploads/2013/06/typing.gif)
 
 #### Optimize Artist Workflows with a more efficent hotkey layout
 
-- [x] Increase Artist Productivity with a fully customizable layout.
-- [x] Reduce Ulnar Deviation and RSI by prioritizing the home row keys whilst
-	still being flexible enough for full customization if needed.
-- [x] Easily accomdate new applications as production needs change
+- [x] Increase Artist Productivity with a fully customizable layout that
+requires minimal setup time.
+- [x] Reduce ulnar deviation and RSI by ergonomically prioritizing the home row keys whilst
+still being flexible enough for full customization if needed (including Left vs Right hand support).
+- [x] Easily integrate new applications as production needs change.
 - [x] Integrate a Python to Autohotkey Parser, allowing for mapping overrides
-	that are not natively supported in a DCC application. Autohotkey code
-	is procedurally generated and commented for easy reference.
-- [x] Fully automate the generation of documentation for each keyboard layout
-	via an HTML webpage, including Autohotkey mappings.
-- [x] Generate native application configuration data, such as UserConfig.kys
+that are not natively supported in a specific DCC application.
+- [x] Autohotkey code is procedurally generated, commented, and documented for
+easy reference like so.
+```Autohotkey
+#IfWinActive ahk_exe Photoshop.exe
+{
+	; Decrease Brush Size
+	!1::
+	{
+	    SendInput, {[}
+	    return
+	}
+	...
+}
+```
+- [x] Fully automate the generation of keymap chart for each keyboard layout
+with an HTML webpage, including Autohotkey mappings.
+- [x] Generate native application configuration data, such as a UserConfig.kys
 file (Photoshop), UserHotkeyString XML (Fusion360), Moi.ini (Moi3d),
 StartupHotkeys.txt (Zbrush), etc.
+- [x] Easy to change, update, and backup configurations
 
--- Extend and Document Artist settings automatically across multiple programs, including:
--- Photoshop
--- Maya
--- Fusion360
--- Moi3d
--- Zbrush
-
-Parse Config Files and automatically generate an html page for easy reference:
--- (Maya):
-
--- (Photoshp):
-
-Hotkey framework for program reconfiguration
-
-Document the layout for east artist reference
-
-Extend the assignable configuration keys via autohotkey
-Maintainable
-Have a repository per user where they can store it remotely and back it up as
-well as view changes and make changes if needed
+#### Project Artifacts
 
 Photoshop example
+
+![](./DemoExamples/HotkeyChartColorKeys.png)
+![](./DemoExamples/PhotoshopHotkeyExampleCroppedSmall.png)
+
 Look at photoshops configuration file
 reverse engineer the data storage format and ordering
 derive 3 main command types
@@ -251,13 +250,6 @@ Parsing photoshop style input sequences to autohotkey syntax hotkey strings
 
 when I hit alt 1 I want to decrese brush size
 again keeping the data self documenting I automatically generate a comment string as well
-
-; Decrease Brush Size
-!1::
-{
-    SendInput, {[}
-    return
-}
 
 Finally combining both the recursive autohotkey maps as well as the photoshop
 mappings I parse those sequence strings to be readable in html visualizer,
