@@ -223,12 +223,12 @@ commented, and documented for easy reference like so.
 ```
 - [x] Fully automate the generation of a keymap chart for each keyboard layout
 with an HTML webpage, including Autohotkey mappings.
-- [x] Generate native application configuration data, such as a UserConfig.kys
+- [x] Ouput native application configuration files, such as a UserConfig.kys
 file (Photoshop), UserHotkeyString XML (Fusion360), Moi.ini (Moi3d),
 StartupHotkeys.txt (Zbrush), etc.
-- [x] Easy to update, diff, and backup configurations
+- [x] Provide utilities for quick keymap updates, diff against existing maps, and backing up configurations
 
-#### Project Artifacts
+#### Keymap Visualizer
 
 Photoshop example
 
