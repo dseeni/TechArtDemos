@@ -208,16 +208,17 @@ still being flexible enough for full customization if needed (including Left vs 
 that are not natively supported in a specific DCC application.
 - [x] Autohotkey code is procedurally generated, commented, and documented for
 easy reference like so.
+
 ```Autohotkey
 #IfWinActive ahk_exe Photoshop.exe
 {
-	; Decrease Brush Size
+	; Decrease Brush Size <- The actual photoshop command name
 	!1::
 	{
 	    SendInput, {[}
 	    return
 	}
-	...
+	; ... repeat for every key
 }
 ```
 - [x] Fully automate the generation of keymap chart for each keyboard layout
