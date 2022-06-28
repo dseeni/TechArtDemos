@@ -203,11 +203,11 @@ selected.</li>
 requires minimal setup time.
 - [x] Reduce ulnar deviation and RSI by ergonomically prioritizing the home row keys whilst
 still being flexible enough for full customization if needed (including Left vs Right hand support).
-- [x] Easily integrate new applications as production needs change.
+- [x] Integrate new applications as production needs change with relative ease.
 - [x] Integrate a Python to Autohotkey Parser, allowing for mapping overrides
 that are not natively supported in a specific DCC application.
-- [x] Autohotkey code is procedurally generated, commented, and documented for
-easy reference like so.
+- [x] Autohotkey code is procedurally generated, dynamically updated,
+commented, and documented for easy reference like so.
 
 ```Autohotkey
 #IfWinActive ahk_exe Photoshop.exe
@@ -221,7 +221,7 @@ easy reference like so.
 	; ... repeat for every key
 }
 ```
-- [x] Fully automate the generation of keymap chart for each keyboard layout
+- [x] Fully automate the generation of a keymap chart for each keyboard layout
 with an HTML webpage, including Autohotkey mappings.
 - [x] Generate native application configuration data, such as a UserConfig.kys
 file (Photoshop), UserHotkeyString XML (Fusion360), Moi.ini (Moi3d),
