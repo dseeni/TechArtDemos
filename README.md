@@ -201,8 +201,9 @@ selected.</li>
 
 - [x] Increase Artist Productivity with a fully customizable layout that
 requires minimal setup time.
-- [x] Reduce ulnar deviation and RSI by ergonomically prioritizing the home row keys whilst
-still being flexible enough for full customization if needed (including Left vs Right hand support).
+- [x] Reduce ulnar deviation and RSI by ergonomically prioritizing the home row
+keys whilst still being flexible enough for full customization if needed
+(including Left vs Right hand support).
 - [x] Integrate new applications as production needs change with relative ease.
 - [x] Integrate a Python to Autohotkey Parser, allowing for mapping overrides
 that are not natively supported in a specific DCC application.
@@ -221,12 +222,13 @@ commented, and documented for easy reference like so.
 	; ... repeat for every key
 }
 ```
-- [x] Fully automate the generation of a keymap chart for each keyboard layout
-with an HTML webpage, including Autohotkey mappings.
+- [x] Fully automate the generation of a keymap chart for each Application layout
+withn an HTML webpage, including Autohotkey mappings.
 - [x] Ouput native application configuration files, such as a UserConfig.kys
-file (Photoshop), UserHotkeyString XML (Fusion360), Moi.ini (Moi3d),
+file (Photoshop), <HotKeyJSONString> XML (Fusion360), Moi.ini (Moi3d),
 StartupHotkeys.txt (Zbrush), etc.
-- [x] Provide utilities for quick keymap updates, diff against existing maps, and backing up configurations
+- [x] Provide utility functions for quick keymap updates, diffing against
+existing configurations, and backing up configurations
 
 #### Keymap Visualizer
 
@@ -244,6 +246,8 @@ html psd script
 ### Binding Front End UI names to config file naming
 
 ### Integrating new applications
+
+### Fusion Toggle Switches
 
 Look at photoshops configuration file
 reverse engineer the data storage format and ordering
