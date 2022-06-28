@@ -1,7 +1,7 @@
 # Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
-### PolyUnchamfer & PolyUnbevel Timelape:
+### PolyUnchamfer & PolyUnbevel Timelapse:
 ![](./DemoExamples/UnbevelUnchamfer.gif)
 ### PolyUnchamfer Project Overview:
 
@@ -36,7 +36,7 @@ manipulation and undo.
 - Much attention was paid into data organization during script execution. Since
 API calls tend to incur a heavy performance penalty, at a high level, script
 execution first deals with the Maya API exclusively, querying necessary
-component level information with the MIterator classes, and making nessary
+component level information with the MIterator classes, and making necessary
 solver calculations with MMatrix and MVector. When transformations are
 finalized, all component transformations are pushed to a single Maya CMDS call.
 This allows for these tools to leverage Maya's built-in undo functionality,
@@ -155,12 +155,16 @@ option, and select the edge that yields the minimum distance to intersection
 <li>1. User Selection: 2 Edges -- adjacent to the beveled geometry.</li>
 	<ul>
 	<li>The World-Space coordinates of each edge-vertex are stored for each
-	edge, allowing for edge selection recorvery post geometry modification,
+	edge, allowing for edge selection recorvery post topology modification,
 	when vertex and edge IDs have changed and the original selection IDs
 	are no longer valid.</li>
-	<li>In the case of </li>
 	</ul>
 <li>2. Edge ring selection is triggered, selecting the interior edge loops.</li>
+	<ul>
+	<li>In the rare case that the partial edge ring selection edge count
+	is greater than the outer ring, a 3 edge selection can be made to indicate
+	which part of the edge ring to trigger unbevel on. (See Timelapse)</li>
+	</ul>
 <li>3. The original selection is excluded from the current ring selection.</li>
 <li>4. This interior edge ring is extended full edge loops and deleted.</li>
 <li>5. Edge and Vertex IDs have changed due to topological modification of the mesh.</li>
