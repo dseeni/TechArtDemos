@@ -223,7 +223,7 @@ with an HTML webpage, including Autohotkey mappings.
 - [x] Generate native application configuration data, such as a UserConfig.kys
 file (Photoshop), UserHotkeyString XML (Fusion360), Moi.ini (Moi3d),
 StartupHotkeys.txt (Zbrush), etc.
-- [x] Easy to change, update, and backup configurations
+- [x] Easy to update, diff, and backup configurations
 
 #### Project Artifacts
 
@@ -231,7 +231,7 @@ Photoshop example
 
 ![](./DemoExamples/HotkeyChartColorKeys.png)
 
-![](./DemoExamples/PhotoshopHotkeyExampleCroppedSmall.png)
+![](./DemoExamples/PhotoshopHotkeyExampleCropped.png)
 
 Look at photoshops configuration file
 reverse engineer the data storage format and ordering
