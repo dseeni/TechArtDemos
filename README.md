@@ -45,7 +45,7 @@ despite heavy use of the Maya API.
 #### *Edge-Vertex Valence Pair Values map to one of the following algorithms:*
 
 #### Skew lines Closest Point of Approach Solver
-- *A 3D implementation of the Closest Point of Approach Algorithim (CPA) for Collison Detection*
+- *A 3D implementation of the Closest Point of Approach (CPA) Algorithim  for Collison Detection*
 - [Distance of closest approach](https://en.wikipedia.org/wiki/Distance_of_closest_approach)
 - [3d coordinate geometry skew lines](https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/)
 
