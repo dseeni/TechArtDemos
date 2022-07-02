@@ -368,7 +368,8 @@ in a skew like effect per face towards the target plane alignment
 Select 3 vertex of a non planar face and planar align that face while respecting
 surround geometry
 
-
+Photoshop projects
+Hot reloading js
 
 
 
