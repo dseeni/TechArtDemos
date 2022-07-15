@@ -69,7 +69,7 @@ two vertices per selected edge*
 - Lets take one edge within a potential PolyUnchamfer input selection as a simple example:
 
 ```
-Let Vertex_A and Vertex_B compromise the edge-verticies of Edge1:
+Let Vertex_A and Vertex_B comprise the edge-verticies of Edge1:
 
 Vertex_A valance = 4
 Vertex_B valance = 3
