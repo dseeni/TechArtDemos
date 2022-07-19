@@ -1,8 +1,9 @@
 # Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
-### PolyUnchamfer & PolyUnbevel Timelapse:
+### PolyUnchamfer & PolyUnbevel Demos
 ![](./DemoExamples/UnbevelUnchamfer.gif)
+
 ### PolyUnchamfer Project Overview:
 
 #### Maya API 2.0: Fast Topological Querying, Sorting, and Vector Calculations
@@ -11,16 +12,13 @@
 (MIterators, MFNMesh etc.) for mesh traversal and topological sorting. MVector
 and MMatrix are used for solver calculations.
 
-- All the following scripts utilize a custom vector calculus library within
-Maya API 2.0. In essence, it's an augmented version of Blender's
-mathutils.geometry, covering a wide array of intersection and collision
+- All the following scripts utilize a custom vector calculus / linear algebra
+library within Maya API 2.0. In essence, it's an augmented version of Blender's
+[mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html), covering a wide array of intersection and collision
 scenarios (examples below). Since all vector and matrix calculations are done
-utilizing Maya API 2.0 exclusively, no dependencies are in place for Numpy and
+utilizing Maya API 2.0 exclusively, there is no dependency on NumPy and
 backwards compatibility with Maya 2018 - 2022 is maintained without an
-additional third-party package eliminating any potential distribution
-complications.
-
-- [mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html)
+additional third-party package, simplifying distribution.
 
 #### Maya Cmds: Component Transformation And Topology Merging
 - Much of the heavy lifting for these tools is done within the Maya API.
@@ -32,7 +30,7 @@ of both worlds approach, Maya API 2.0 for fast vector and matrix operations, as
 well as pulling internal geometry data, and Maya Cmds for final geometry
 manipulation and undo.
 
-#### Peformance Optimized: Minimized API Calls
+#### Performance Optimized: Minimized API Calls
 - Much attention was paid into data organization during script execution. Since
 API calls tend to incur a heavy performance penalty, at a high level, script
 execution first deals with the Maya API exclusively, querying necessary
@@ -42,20 +40,20 @@ finalized, all component transformations are pushed to a single Maya CMDS call.
 This allows for these tools to leverage Maya's built-in undo functionality,
 despite heavy use of the Maya API.
 
-#### *Edge-Vertex Valence Pair Values map to one of the following algorithms:*
+#### *Edge-Vertex valence pairs are mapped to one of the following solvers*
 
-#### Skew lines Closest Point of Approach Solver
-- *A 3D implementation of the Closest Point of Approach (CPA) Algorithim  for Collison Detection*
+#### Skew lines Closest Point of Approach
+- *A 3D implementation of the Closest Point of Approach (CPA) Algorithm  for Collision Detection*
 - [Distance of closest approach](https://en.wikipedia.org/wiki/Distance_of_closest_approach)
 - [3d coordinate geometry skew lines](https://brilliant.org/wiki/3d-coordinate-geometry-skew-lines/)
 
-#### Line Line Intersection Solver
+#### Line Line Intersection
 - [3D Line Intersections](https://mathemerize.com/point-of-intersection-of-two-lines-in-3d/)
 
-#### Line Plane Intersection Solver
+#### Line Plane Intersection
 - [Line Plane Intersection](https://handwiki.org/wiki/Line%E2%80%93plane_intersection)
 
-#### Plane Plane Intersection Solver
+#### Plane Plane Intersection
 - [Dual Plane Intersection](https://brilliant.org/wiki/3d-coordinate-geometry-intersection-of-planes/)
 
 #### Solvers are triggered on a per edge basis
@@ -71,33 +69,37 @@ two vertices per selected edge*
 ```
 Let Vertex_A and Vertex_B comprise the edge-verticies of Edge1:
 
+Maya Api queries return valence values per edge-vertex...
 Vertex_A valance = 4
 Vertex_B valance = 3
 
-Valence pair values are sorted in ascending wherein (4,3) -> (3,4)
+Valence pair values are then sorted in ascending order wherein (4,3) -> (3,4)
 
-Thus a Valence Pair of (4,3) => Line Plane Solver(3,4)
-Simple!
+A valence pair of (4,3) => Line Plane Solver(3,4) for that edge
+
+...
+
 ```
 
-In this way, each subsequent solver can be potentially triggered by a unique
-edge-vertex valence pair on a per edge basis, as noted in the following section:
-
 -----------------------------------------------------------------------
+
+*In this way, each subsequent solver can be potentially triggered by a unique
+edge-vertex valence pair on a per edge basis, as noted in the following section:*
 
 **Recursive 3-Way Skew Lines Solver (4,4):**
 
 ```
 The 3-Way Skew Solver is triggered when selected edge(s) belong to a
-trianglualr face in the case of corner chamfers and no intersections exists.
+trianglualr face, such as in the case of corner chamfers.
 ```
-![](./DemoExamples/UnchamferCornerCase.gif)
 
 <details>
   <summary>3-Way Solve Diagram</summary>
 
 ![](./DemoExamples/unbevel_example.jpg)
 </details>
+
+![](./DemoExamples/UnchamferCornerCase.gif)
 
 -----------------------------------------------------------------------
 **Skew Line Solver (4,4):**
@@ -238,7 +240,7 @@ Photoshop example
 
 ![](./DemoExamples/PhotoshopHotkeyExampleCropped.png)
 
-include large images as links
+Include large images as links
 
 ### Generating the html template
 html psd script
@@ -258,7 +260,7 @@ derive 3 main command types
 
 Flood the UI with all possible keycombinations
 
-build a map between UI representation of a command and its internal xml storage representation
+Build a map between UI representation of a command and its internal xml storage representation
 determine a sort order for left vs right handed artists
 log artist sessions in photoshop and sort most used vs least used commands according to frequency
 reconfigure the ui to be most accessable to the artist
@@ -370,6 +372,8 @@ surround geometry
 
 Photoshop projects
 Hot reloading js
+
+
 
 
 
