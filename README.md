@@ -67,9 +67,10 @@ two vertices per selected edge*
 - Lets take one edge within a potential PolyUnchamfer input selection as a simple example:
 
 ```
-Let Vertex_A and Vertex_B comprise the edge-verticies of Edge1:
+Let Vertex_A and Vertex_B comprise the edge-verticies of Edge1
 
-Maya Api queries return valence values per edge-vertex...
+Maya Api edge sort return valence values per edge-vertex...
+
 Vertex_A valance = 4
 Vertex_B valance = 3
 
@@ -83,8 +84,8 @@ A valence pair of (4,3) => Line Plane Solver(3,4) for that edge
 
 -----------------------------------------------------------------------
 
-*In this way, each subsequent solver can be potentially triggered by a unique
-edge-vertex valence pair on a per edge basis, as noted in the following section:*
+*In this way, each edge-vertex valence pair maps to one of the 
+solvers listed in the following section:*
 
 **Recursive 3-Way Skew Lines Solver (4,4):**
 
@@ -150,28 +151,28 @@ option, and select the edge that yields the minimum distance to intersection
 
 -----------------------------------------------------------------------
 
-### PolyUnbevel Project Overview:
+### PolyUnbevel Demo
 
 ![](./DemoExamples/UnBevelSteps.jpg)
 
-#### Unbevel can be summarized in these 10 steps:
-<ul>
-<li>1. User Selection: 2 Edges -- adjacent to the beveled geometry.</li>
+#### PolyUnbevel can be summarized in these 10 steps:
+<ol>
+<li>User Selection: 2 Edges -- adjacent to the beveled geometry.</li>
 	<ul>
 	<li>The World-Space coordinates of each edge-vertex are stored for each
 	edge, allowing for edge selection recorvery post topology modification,
 	when vertex and edge IDs have changed and the original selection IDs
 	are no longer valid.</li>
 	</ul>
-<li>2. Edge ring selection is triggered, selecting the interior edge loops.</li>
+<li>Edge ring selection is triggered, selecting the interior edge loops.</li>
 	<ul>
 	<li>In the rare case that the partial edge ring selection edge count
 	is greater than the outer ring, a 3 edge selection can be made to indicate
 	which part of the edge ring to trigger unbevel on. (See Timelapse)</li>
 	</ul>
-<li>3. The original selection is excluded from the current ring selection.</li>
-<li>4. This interior edge ring is extended full edge loops and deleted.</li>
-<li>5. Edge and Vertex IDs have changed due to topological modification of the mesh.</li>
+<li>The original selection is excluded from the current ring selection.</li>
+<li>This interior edge ring is extended full edge loops and deleted.</li>
+<li>Edge and Vertex IDs have changed due to topological modification of the mesh.</li>
 	<ul>
 	<li>Using each original edge's World-Space coordinates, edge centers are
 	calculated and projected to the mesh via Maya API calls to MPointOnMesh.</li>
@@ -183,13 +184,13 @@ option, and select the edge that yields the minimum distance to intersection
 	edges having a newly assigned edge ID.</li>
 	<li> The original edge selection is then converted to faces.</li>
 	</ul>
-<li>6. The common face amongst each 'ConvertToFaces' call is filtered and
+<li>The common face amongst each 'ConvertToFaces' call is filtered and
 selected.</li>
-<li>7. The current face selection is converted to edges.</li>
-<li>8. The original selection edges are removed.</li>
-<li>9. Edge Ring selection is triggered.</li>
-<li>10. PolyUnChamfer is called.</li>
-</ul>
+<li>The current face selection is converted to edges.</li>
+<li>The original selection edges are removed.</li>
+<li>Edge Ring selection is triggered.</li>
+<li>PolyUnChamfer is called.</li>
+</ol>
 
 -----------------------------------------------------------------------
 
