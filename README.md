@@ -200,7 +200,7 @@ selected.</li>
 #### SuperCharge supports Maya, Photoshop, Zbrush, Fusion360, Moi3d, and 3DCoat so far!
 ![](https://i0.wp.com/scifiinterfaces.com/wp-content/uploads/2013/06/typing.gif)
 
-#### Optimize Artist Workflows with a more efficent hotkey layout
+#### Optimize Artist Workflows with a more efficient hotkey layout
 
 - [x] Increase Artist Productivity with a fully customizable layout that
 requires minimal setup time.
@@ -225,12 +225,12 @@ commented, and documented for easy reference like so.
 	; ... repeat for every key
 }
 ```
-- [x] Fully automate the generation of a keymap chart for each Application layout
-withn an HTML webpage, including Autohotkey mappings.
-- [x] Ouput native application configuration files, such as a UserConfig.kys
+- [x] Fully automate the generation of a key map chart for each Application layout
+within an HTML webpage, including Autohotkey mappings.
+- [x] Output native application configuration files, such as a UserConfig.kys
 file (Photoshop), <HotKeyJSONString> XML (Fusion360), Moi.ini (Moi3d),
 StartupHotkeys.txt (Zbrush), etc.
-- [x] Provide utility functions for quick keymap updates, diffing against
+- [x] Provide utility functions for quick key map updates, diffing against
 existing configurations, and backing up configurations
 
 #### Keymap Visualizer
