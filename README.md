@@ -242,7 +242,7 @@ Photoshop's Javascript API was utilized generate text layers for the key
 labels.
 ```javascript
 hkd = {
-  Print: [
+  "Print": [
     "std Print",
     "alt Print",
     "shift Print",
@@ -252,7 +252,7 @@ hkd = {
     "ctrl shift Print",
     "ctrl alt shift Print",
   ],
-  Pause: [
+  "Pause": [
     "std Pause",
     "alt Pause",
     "shift Pause",
