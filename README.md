@@ -240,7 +240,264 @@ Photoshop example
 
 Photoshop's Javascript API was utilized generate text layers for the key
 labels.
+```
+hkd = {
+  Print: [
+    "std Print",
+    "alt Print",
+    "shift Print",
+    "alt shift Print",
+    "ctrl Print",
+    "ctrl alt Print",
+    "ctrl shift Print",
+    "ctrl alt shift Print",
+  ],
+  Pause: [
+    "std Pause",
+    "alt Pause",
+    "shift Pause",
+    "alt shift Pause",
+    "ctrl Pause",
+    "ctrl alt Pause",
+    "ctrl shift Pause",
+    "ctrl alt shift Pause",
+  ],
+  "Scroll Lock": [
+    "std Scroll Lock",
+    "alt Scroll Lock",
+    "shift Scroll Lock",
+    "alt shift Scroll Lock",
+    "ctrl Scroll Lock",
+    "ctrl alt Scroll Lock",
+    "ctrl shift Scroll Lock",
+    "ctrl alt shift Scroll Lock",
+  ],
+};
 
+// # # -------------------------------------------------------------------------
+var doc = app.activeDocument;
+
+function place_text(start_position, offset_position, sub_key_array, text_size) {
+  for (var key in sub_key_array) {
+    var layername = String(sub_key_array[key]);
+    if (hkd.hasOwnProperty(sub_key_array[key])) {
+      var textobjs = hkd[sub_key_array[key]];
+    } else {
+      continue;
+    }
+    doc.activeLayer = doc.artLayers.getByName(layername);
+    var initial_position = [
+      doc.activeLayer.bounds[0] + start_position[0],
+      doc.activeLayer.bounds[1] + start_position[1],
+    ];
+
+    for (var value in textobjs) {
+      if (null != textobjs[value]) {
+        var newLayer = doc.artLayers.add();
+        newLayer.kind = LayerKind.TEXT;
+        newLayer.name = textobjs[value];
+        newLayer.textItem.contents = textobjs[value];
+        newLayer.textItem.size = text_size;
+        newLayer.textItem.font = "Arial";
+        var newpos = [
+          initial_position[0] + offset_position[0] * (value + 1),
+          initial_position[1] + offset_position[1] * (value + 1),
+        ];
+        newLayer.textItem.position = newpos;
+      }
+    }
+  }
+}
+
+var std_spacing = [0, 3.4];
+var text_pt = 13.5;
+
+var std_offset = [25, 10];
+var std_keys = [
+  "Q",
+  "W",
+  "E",
+  "R",
+  "T",
+  "Y",
+  "U",
+  "I",
+  "O",
+  "P",
+  "L Sq Bracket",
+  "R Sq Bracket",
+  "Backslash",
+  "A",
+  "S",
+  "D",
+  "F",
+  "G",
+  "H",
+  "J",
+  "K",
+  "L",
+  "Semicolon",
+  "Apos",
+  "Z",
+  "X",
+  "C",
+  "V",
+  "B",
+  "N",
+  "Comma",
+  "Period",
+  "Forward Slash",
+  "Numpad 1",
+  "Numpad 2",
+  "Numpad 3",
+  "Numpad 4",
+  "Numpad 5",
+  "Numpad 6",
+  "Numpad 7",
+  "Numpad 8",
+  "Numpad 9",
+  "Numpad Asterisk",
+  "Numpad Forward Slash",
+  "Numpad Minus",
+  "Numpad Plus",
+];
+place_text(std_offset, std_spacing, std_keys, text_pt);
+
+var m_key_offset = [30, 10];
+var m_keys = ["M"];
+place_text(m_key_offset, std_spacing, m_keys, text_pt);
+
+var fkey_offset = [6, 80];
+var fkeys = [
+  "F1",
+  "F2",
+  "F3",
+  "F4",
+  "F5",
+  "F6",
+  "F7",
+  "F8",
+  "F9",
+  "F10",
+  "F11",
+  "F12",
+];
+place_text(fkey_offset, std_spacing, fkeys, text_pt);
+
+var home_row_number_offset = [0, 72];
+var home_row_number_keys = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "0",
+  "Minus",
+  "Equals",
+];
+place_text(home_row_number_offset, std_spacing, home_row_number_keys, text_pt);
+
+var capslock_offset = [216, 4];
+var capslock_keys = ["Capslock"];
+place_text(capslock_offset, std_spacing, capslock_keys, text_pt);
+
+var backspace_offset = [0, 72];
+var backspace_keys = ["Backspace"];
+place_text(backspace_offset, std_spacing, backspace_keys, text_pt);
+
+var tilde_offset = [0, 62];
+var tilde_key_keys = ["Tilde"];
+place_text(tilde_offset, std_spacing, tilde_key_keys, text_pt);
+
+var tab_offset = [105, 10];
+var tab_keys = ["Tab"];
+place_text(tab_offset, std_spacing, tab_keys, text_pt);
+
+var esc_offset = [0, 81];
+var esc_keys = ["Esc"];
+place_text(esc_offset, std_spacing, esc_keys, text_pt);
+
+var numlock_offset = [-10, 104];
+var numlock_keys = ["Numlock"];
+place_text(numlock_offset, std_spacing, numlock_keys, text_pt);
+
+var numpad_period_offset = [19, -277];
+var numpad_period_keys = ["Numpad Period"];
+place_text(numpad_period_offset, std_spacing, numpad_period_keys, text_pt);
+
+var numpad_0_offset = [86, 15];
+var numpad_0_keys = ["Numpad 0"];
+place_text(numpad_0_offset, std_spacing, numpad_0_keys, text_pt);
+
+var num_enter_key_offset = [8, -585];
+var num_enter_key_keys = ["Numpad Enter"];
+place_text(num_enter_key_offset, std_spacing, num_enter_key_keys, text_pt);
+
+var right_arrow_offset = [8, -271];
+var right_arrow_keys = ["Right"];
+place_text(right_arrow_offset, std_spacing, right_arrow_keys, text_pt);
+
+var left_arrow_offset = [4, -266];
+var left_arrow_keys = ["Left"];
+place_text(left_arrow_offset, std_spacing, left_arrow_keys, text_pt);
+
+var up_arrow_offset = [7, 67];
+var up_arrow_keys = ["Up"];
+place_text(up_arrow_offset, std_spacing, up_arrow_keys, text_pt);
+
+var down_arrow_offset = [5, -270];
+var down_arrow_keys = ["Down"];
+place_text(down_arrow_offset, std_spacing, down_arrow_keys, text_pt);
+
+var delete_end_pgdn_offset = [0, -264];
+var delete_end_pgdn_keys = ["Delete", "End", "Pg Dn"];
+place_text(delete_end_pgdn_offset, std_spacing, delete_end_pgdn_keys, text_pt);
+
+var R_Enter_offset = [-666, 20];
+var R_Enter_keys = ["Enter"];
+place_text(R_Enter_offset, std_spacing, R_Enter_keys, text_pt);
+
+var R_Shift_offset = [-795, 18];
+var R_Shift_keys = ["Enter", "R_Shift"];
+place_text(R_Shift_offset, std_spacing, R_Shift_keys, text_pt);
+
+var Space_LAlt_LWin_R_Alt_R_Ctrl_offset = [10, -270];
+var Space_LAlt_LWin_R_Alt_R_Ctrl_keys = [
+  "L_Alt",
+  "L_Win",
+  "R_Alt",
+  "R_Ctrl",
+  "Space",
+];
+place_text(
+  Space_LAlt_LWin_R_Alt_R_Ctrl_offset,
+  std_spacing,
+  Space_LAlt_LWin_R_Alt_R_Ctrl_keys,
+  text_pt
+);
+
+var insert_home_pgup_offset = [0, 72];
+var insert_home_pgup_keys = [
+  "Insert",
+  "Home",
+  "Pg Up",
+  "Print",
+  "Scroll Lock",
+  "Pause",
+];
+place_text(
+  insert_home_pgup_offset,
+  std_spacing,
+  insert_home_pgup_keys,
+  text_pt
+);
+
+
+```
 
 Then for each key label, the main command slot as well as modifier keys
 ()
