@@ -226,16 +226,24 @@ commented, and documented for easy reference like so.
 }
 ```
 - [x] Fully automate the generation of a key map chart for each Application layout
-within an HTML webpage, including Autohotkey mappings.
+within an HTML webpage, including Autohotkey mappings, allowing artists to
+quickly reference an entire layout all at once.
 - [x] Output native application configuration files, such as a UserConfig.kys
 file (Photoshop), <HotKeyJSONString> XML (Fusion360), Moi.ini (Moi3d),
 StartupHotkeys.txt (Zbrush), etc.
 - [x] Provide utility functions for quick key map updates, diffing against
-existing configurations, and backing up configurations
+existing configurations, and backing up configurations using a SNV like Git.
 
 #### Keymap Visualizer
 
 Photoshop example
+
+Photoshop's Javascript API was utilized generate text layers for the key
+labels.
+
+
+Then for each key label, the main command slot as well as modifier keys
+()
 
 ![](./DemoExamples/HotkeyChartColorKeys.png)
 
