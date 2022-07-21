@@ -84,7 +84,7 @@ A valence pair of (4,3) => Line Plane Solver(3,4) for that edge
 
 -----------------------------------------------------------------------
 
-*In this way, each edge-vertex valence pair maps to one of the 
+*In this way, each edge-vertex valence pair maps to one of the
 solvers listed in the following section:*
 
 **Recursive 3-Way Skew Lines Solver (4,4):**
@@ -236,12 +236,29 @@ existing configurations, and backing up configurations using a SNV like Git.
 
 #### Keymap Visualizer
 
-Photoshop example
+Photoshop's Javascript API was utilized to generate the key map visualizer
+procedurally.
 
-Photoshop's Javascript API was utilized generate text layers for the key
-labels.
+Every key label has 8 associate slots.
+
+```
+- Standard
+- Alt
+- Shift
+- Alt Shift
+- Ctrl
+- Ctrl Shift
+- Ctrl Alt
+```
+
+Offset Vectors from the main text label were calcualted for each associated
+hotkey slot using the following script
+
+<details>
+  <summary>GenerateKeyMapVisualizer.js</summary>
+
 ```javascript
-hkd = {
+var hkd = {
   "Print": [
     "std Print",
     "alt Print",
@@ -274,8 +291,9 @@ hkd = {
   ],
 };
 
-// # # -------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 var doc = app.activeDocument;
+
 
 function place_text(start_position, offset_position, sub_key_array, text_size) {
   for (var key in sub_key_array) {
@@ -363,7 +381,7 @@ var std_keys = [
 ];
 place_text(std_offset, std_spacing, std_keys, text_pt);
 
-var m_key_offset = [30, 10];
+var m_key_offset = [30, 10]; // offset unique due to hand placement variation
 var m_keys = ["M"];
 place_text(m_key_offset, std_spacing, m_keys, text_pt);
 
@@ -496,8 +514,8 @@ place_text(
   text_pt
 );
 
-
 ```
+</details>
 
 Then for each key label, the main command slot as well as modifier keys
 ()
