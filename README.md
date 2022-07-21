@@ -240,7 +240,7 @@ Photoshop example
 
 Photoshop's Javascript API was utilized generate text layers for the key
 labels.
-```
+```javascript
 hkd = {
   Print: [
     "std Print",
