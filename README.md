@@ -602,7 +602,7 @@ F2::
     return
 }
 
-; Pain Selection Toggle
+; Paint Selection Toggle
 ^Space::
 {
     SendInput, % PaintSel_TGL = 1 ? ( "{3}", PaintSel_TGL := 0 ) : ( "{1}", PaintSel_TGL := 1 )
