@@ -544,6 +544,7 @@ algorithm for fuzzy matching UI display names to API commands.
   similarity to their corresponding API commands.
 
 ```python
+# #################################################### FUZZYWUZZY MATCH RESULTS
 SampleFuzzyWuzzyOutput = [
 	('std_F4', 'Shaded', 'SDK.MAGNestDisplayCmd.Shaded'),
 	('alt_F4', 'Pattern Rectangular', 'ShapeRectangleCenter'),
