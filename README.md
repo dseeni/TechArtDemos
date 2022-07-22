@@ -234,25 +234,23 @@ StartupHotkeys.txt (Zbrush), etc.
 - [x] Provide utility functions for quick key map updates, diffing against
 existing configurations, and backing up configurations using a SNV like Git.
 
-#### Keymap Visualizer
+#### Procedurally generating the Key Map Visualizer
 
 Photoshop's Javascript API was utilized to generate the key map visualizer
 procedurally.
 
-Every key label has 8 associate slots.
+Every key label has 8 associated slots for possible key maps.
 
-```
-- Standard
-- Alt
-- Shift
-- Alt Shift
-- Ctrl
-- Ctrl Shift
-- Ctrl Alt
-```
+![](./DemoExamples/HotkeyChartColorKeysCropped.png)
 
-Offset Vectors from the main text label were calcualted for each associated
-hotkey slot using the following script
+Each Key label is a text layer in the PSD file.
+
+Offset Vectors from each text layers coordinates were calculated for each
+associated hotkey slot using the following script via the Photoshop API,
+generating a unique empty text layer per modifier slot.
+
+The PSD file was then output as HTML/CSS, exposing the slots for variable
+input.
 
 <details>
   <summary>GenerateKeyMapVisualizer.js</summary>
@@ -517,23 +515,36 @@ place_text(
 ```
 </details>
 
-Then for each key label, the main command slot as well as modifier keys
-()
-
-![](./DemoExamples/HotkeyChartColorKeys.png)
-
 ![](./DemoExamples/PhotoshopHotkeyExampleCropped.png)
 
-Include large images as links
+#### Binding front end UI names to API names
+  - In the case of Fusion 360, at custom keyboard shortcuts could only be
+  saved one at a time from the user interface required multiple user prompts.
 
-### Generating the html template
-html psd script
+  - Documentation for all possible commands via the API was available, but
+  they did not accurately match the names present in the UI.
 
-### Binding Front End UI names to config file naming
+  - In order to solve this and create a binding between UI names and back-end
+  API names for assignable commands UI Commands were screenshotted and then
+  processed in photoshop using actions stripping out the color and leaving just
+  a list of names.
 
-### Integrating new applications
+- [Google Tesseract](https://github.com/tesseract-ocr/tesseract) then extracted
+csv data for each name, generating text lists.
 
-### Fusion Toggle Switches
+- [Python FuzzyWuzzy](https://docs.blender.org/api/current/mathutils.geometry.html)
+Since there were 1000 or more possible UI names in Fusion360, the FuzzyWuzzy
+library provded provided closest possible matches between UI names and API names
+leveraging the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+algorithm.
+
+- [Google Tesseract](https://github.com/tesseract-ocr/tesseract)
+
+- [Python FuzzyWuzzy](https://docs.blender.org/api/current/mathutils.geometry.html)
+
+#### Integrating new applications
+
+#### Fusion Toggle Switches
 
 Look at photoshops configuration file
 reverse engineer the data storage format and ordering
