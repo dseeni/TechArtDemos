@@ -566,13 +566,9 @@ SampleFuzzyWuzzyOutput = [
 ]
 ```
 
-
-
-#### Integrating new applications
-
 #### Fusion Toggle Switches
-
-
+- Toggle Switches were generated in Python and parsed into
+the Autohotkey code below, dynamically merging two Fusion mappings into a toggle switch.
 
 ```autohotkey
 WireframeOnShaded_TGL := 1
@@ -618,9 +614,9 @@ F2::
 }
 ```
 
+#### Integrating new applications
 
-
-Look at photoshops configuration file
+Look at Photoshop's configuration file
 reverse engineer the data storage format and ordering
 derive 3 main command types
 	static unique id
