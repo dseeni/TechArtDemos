@@ -578,7 +578,7 @@ the Autohotkey code below, dynamically merging two Fusion mappings into a ternar
 change, and are parsed and commented as Autohotkey bindings.
 
 ```autohotkey
-; Fusion360 Toggle Constants
+; ################################################## FUSION360 TOGGLE CONSTANTS
 WireframeOnShaded_TGL := 1
 XRayOnShaded_TGL := 1
 Incremental_TGL := 1
