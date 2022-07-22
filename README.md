@@ -200,10 +200,49 @@ selected.</li>
 -----------------------------------------------------------------------
 ## Maya SnapAlign
 ### A new snapping system for Maya
-- Snap to nearest component or object solely based on cursor position
+#### Supports all the snapping features found in Maya's native snapping system
+- Axis Constraint Snap
+- Vertex Snap
+
+#### Hover Snap Cursor Position Tracking
+- Snap to nearest component or object solely based on cursor position without clicking
+- Similar algorithm to Maya's selection preview highlighting
+- Combines PySide with Maya API to determine cursor position without clicking
+
+![](./DemoExamples/cmdsSnapAlignFaceEdgeCenter.gif)
+
 - Supports planar snapping with XY YZ ZX tool handles similar to 3Ds-Max
 - Supports relative spacing for components and objects allowing easy alignment
 - Snap to Edge Center and Face Centers as well as verticies
+
+<ul>
+<li>Edge ring selection is triggered, selecting the interior edge loops.</li>
+	<ul>
+	<li>In the rare case that the partial edge ring selection edge count
+	is greater than the outer ring, a 3 edge selection can be made to indicate
+	which part of the edge ring to trigger unbevel on. (See Timelapse)</li>
+	</ul>
+<li>The original selection is excluded from the current ring selection.</li>
+<li>This interior edge ring is extended full edge loops and deleted.</li>
+<li>Edge and Vertex IDs have changed due to topological modification of the mesh.</li>
+	<ul>
+	<li>Using each original edge's World-Space coordinates, edge centers are
+	calculated and projected to the mesh via Maya API calls to MPointOnMesh.</li>
+	<li>A minimum delta vector is calculated between the original edge
+	vector mid-point and the mid-point of each newly created edge. </li>
+	<li> The original edge selections yield MPointOnMesh delta vectors with
+	a magnitude close to 0.</li>
+	<li>This allows recovery of the original edge selection, despite the
+	edges having a newly assigned edge ID.</li>
+	<li> The original edge selection is then converted to faces.</li>
+	</ul>
+<li>The common face amongst each 'ConvertToFaces' call is filtered and
+selected.</li>
+<li>The current face selection is converted to edges.</li>
+<li>The original selection edges are removed.</li>
+<li>Edge Ring selection is triggered.</li>
+<li>PolyUnChamfer is called.</li>
+</ul>
 
 Relative spacing on or off to stack objects
 Built a snapping system from the ground up
