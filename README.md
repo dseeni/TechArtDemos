@@ -11,21 +11,22 @@
 
 #### Maya API 2.0: Fast Topological Querying, Sorting, and Vector Calculations
 
-- Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python Api 2.0
+- Maya PolyUnbevel and PolyUnchamfer leverage the Maya Python API 2.0
 (MIterators, MFNMesh etc.) for mesh traversal and topological sorting. MVector
 and MMatrix are used for solver calculations.
 
 - All the following scripts utilize a custom vector calculus / linear algebra
-library within Maya API 2.0. In essence, it's an augmented version of Blender's
-[mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html), covering a wide array of intersection and collision
-scenarios (examples below).
+library within Maya API 2.0. In essence, it's an *augmented* version of Blender's
+[mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html),
+providing Linear Algebra and Vector Calculus solvers for a wide array of
+intersection, projection, interpolation, and collision scenarios.
 
 - Since all vector and matrix calculations are done
 utilizing Maya API 2.0 exclusively, there is no dependency on NumPy and
 backwards compatibility with Maya 2018 - 2022 is maintained without an
 additional third-party package, simplifying distribution.
 
-#### Maya Cmds: Component Transformation And Topology Merging
+#### Maya Cmds: Undoable Component Transformation And Topology Merging
 - Much of the heavy lifting for these tools is done within the Maya API.
 After solver calculations and topological sorting are finished,
 final mesh manipulation is pushed to Maya Cmds. This allows for PolyUnchamfer
@@ -40,7 +41,7 @@ manipulation and undo.
 API calls tend to incur a heavy performance penalty, at a high level, script
 execution first deals with the Maya API exclusively, querying necessary
 component level information with the MIterator classes, and making necessary
-solver calculations with MMatrix and MVector. When transformations are
+solver calculations with MMatrix and MVector. When transformation targets are
 finalized, all component transformations are pushed to a single Maya CMDS call.
 This allows for these tools to leverage Maya's built-in undo functionality,
 despite heavy use of the Maya API.
@@ -74,7 +75,7 @@ two vertices per selected edge*
 ```
 Let Vertex_A and Vertex_B comprise the edge-verticies of Edge1
 
-Maya Api edge sort return valence values per edge-vertex...
+Maya API edge sort return valence values per edge-vertex...
 
 Vertex_A valance = 4
 Vertex_B valance = 3
@@ -200,22 +201,24 @@ selected.</li>
 -----------------------------------------------------------------------
 ## Maya SnapAlign
 ### A new snapping system for Maya
-
 - [x] Easily align and snap objects or components along an active axis or plane
 during layout or modeling tasks
 - [x] Aim lights, Aim Constraints, or align deformers when lighting or rigging
 
 #### SnapAlign includes all the snapping features found in Maya's native snapping system
-
 - Axis Constraint Snap along axis *[X, Y, Z]*
 - Object or Component full snap *[XYZ]*
 
 #### SnapAlign appends the following features
-
 - Object or Component Planar Snap along plane *[XY, YZ, ZX]*
 - Snap to edge center and face centers as well as components
 - Planar snap with XY YZ ZX set as active tool handle on the move tool similar to 3Ds-Max
 - SnapAlign extends Maya's *Keep Spacing* to include components *and* objects for easy alignment and snapping
+
+#### Snapping based on cursor position
+- SnapAlign snaps to nearest component or object solely based on cursor position
+- Nearest Component or Object is implements a similar algorithm to Maya's selection preview highlighting
+- Links the PySide2/PyQt5 Screen Space coordinate system with the Maya API Screen Space coordinate system to determine cursor position without clicking
 
 #### Edge Center and Face Center Snapping Demo
 ![](./DemoExamples/cmdsSnapAlignFaceEdgeCenter.gif)
@@ -225,11 +228,6 @@ during layout or modeling tasks
 
 #### Planar Align Component Selections Demo
 ![](./DemoExamples/cmdsSnapAlignObjectPlanar.gif)
-
-#### Snapping based on cursor position
-- SnapAlign snaps to nearest component or object solely based on cursor position
-- Nearest Component or Object is implements a similar algorithm to Maya's selection preview highlighting
-- Links the PySide2/PyQt5 Screen Space coordinate system with the Maya API Screen Space coordinate system to determine cursor position without clicking
 
 <ul>
 <li>Edge ring selection is triggered, selecting the interior edge loops.</li>
