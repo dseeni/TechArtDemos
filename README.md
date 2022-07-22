@@ -200,20 +200,35 @@ selected.</li>
 -----------------------------------------------------------------------
 ## Maya SnapAlign
 ### A new snapping system for Maya
-#### Supports all the snapping features found in Maya's native snapping system
-- Axis Constraint Snap
-- Vertex Snap
+
+- [x] Easily align and snap objects or components along an active axis or plane
+during layout or modeling tasks
+- [x] Aim lights, Aim Constraints, or align deformers when lighting or rigging
+
+#### SnapAlign supports all the snapping features found in Maya's native snapping system
+- Axis Constraint Snap along axis *[X, Y, Z]*
+
+- Object or Component full snap *[XYZ]*
+
+#### SnapAlign adds the following features
+
+- Object or Component Planar Snap along plane *[XY, YZ, ZX]*
+
+- Snap to Edge Center and Face Centers as well as verticies
+
+#### Edge Center and Face Center Snapping Demo
+![](./DemoExamples/cmdsSnapAlignFaceEdgeCenter.gif)
+
+#### Planar Align Component Selections Demo
+![](./DemoExamples/cmdsSnapAlignFaceEdgeCenter.gif)
 
 #### Hover Snap Cursor Position Tracking
 - Snap to nearest component or object solely based on cursor position without clicking
 - Similar algorithm to Maya's selection preview highlighting
-- Combines PySide with Maya API to determine cursor position without clicking
+- Links the PySide2/PyQt5 Screen Space coordinate system with the Maya API Screen Space coordinate system to determine cursor position without clicking
 
-![](./DemoExamples/cmdsSnapAlignFaceEdgeCenter.gif)
-
-- Supports planar snapping with XY YZ ZX tool handles similar to 3Ds-Max
-- Supports relative spacing for components and objects allowing easy alignment
-- Snap to Edge Center and Face Centers as well as verticies
+- Supports planar snapping with XY YZ ZX set to active on the move tool similar to 3Ds-Max
+- Extends Maya's *Keep Spacing* to include components and objects for easy alignment and snapping
 
 <ul>
 <li>Edge ring selection is triggered, selecting the interior edge loops.</li>
