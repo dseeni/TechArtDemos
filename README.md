@@ -1,3 +1,6 @@
+# Table of Contents
+1. [Example](#example)
+
 # Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
@@ -625,21 +628,25 @@ F2::
 
 #### Integrating new applications
 
-Integrating new applications requires two steps.
+Integrating new applications requires the following steps
 <ol>
 <li> Binding UI commands to API commands</li>
 <li> Parsing the target programs hotkey syntax to that of the Key Map Visualizer</li>
-<li> Parsing -> the target programs hotkey syntax to autohotkey for overrides</li>
+<li> Parsing the target programs hotkey syntax to autohotkey for overrides</li>
+<li> Output a native hotkey file for integration into the host program</li>
 </ol>
 
-Look at Photoshop's configuration file
-reverse engineer the data storage format and ordering
-derive 3 main command types
-	static unique id
-	dynamic no unique id
-	tools stackable groups vs non stackable
 
-Flood the UI with all possible keycombinations
+### Example
+
+#### Understanding Photoshops .kys file
+Reverse engineer the data storage format and ordering
+derive 3 main command types
+- static unique id
+- dynamic no unique id
+- stackable tool groups vs unique tools
+
+Flood the UI with assignments to any desired command
 
 Build a map between UI representation of a command and its internal xml storage representation
 determine a sort order for left vs right handed artists
