@@ -629,7 +629,7 @@ Integrating new applications requires two steps.
 <ol>
 <li> Binding UI commands to API commands</li>
 <li> Parsing the target programs hotkey syntax to that of the Key Map Visualizer</li>
-<li> Parsing --> the target programs hotkey syntax to autohotkey for overrides</li>
+<li> Parsing -> the target programs hotkey syntax to autohotkey for overrides</li>
 </ol>
 
 Look at Photoshop's configuration file
