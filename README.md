@@ -18,7 +18,7 @@ and MMatrix are used for solver calculations.
 - All the following scripts utilize a custom vector calculus / linear algebra
 library within Maya API 2.0. In essence, it's an augmented version of Blender's
 [mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html), covering a wide array of intersection and collision
-scenarios (examples below). 
+scenarios (examples below).
 
 - Since all vector and matrix calculations are done
 utilizing Maya API 2.0 exclusively, there is no dependency on NumPy and
@@ -522,31 +522,31 @@ place_text(
 
 ![](./DemoExamples/PhotoshopHotkeyExampleCropped.png)
 
-#### Binding front end UI names to API names
-  - In the case of Fusion 360, at the time custom keyboard shortcuts could only
-  be saved one at a time from the user interface, required multiple user
+#### Binding UI display names to API names using Tesseract OCR and FuzzyWuzzy
+  - In the case of Fusion360, at the time, custom keyboard shortcuts could only
+  be saved one at a time from the user interface, and required multiple user
   prompts and menu selections.
 
   - Documentation for all possible commands via the API was available, but
   they did not accurately match the names present in the UI menus.
 
-  - Since Users should only care about UI names for quick reference to key maps
-  a binding between UI names and API commands was required.
+  - Since Users should only care about UI names for quick reference to key
+  maps, a binding between UI names and API commands was required.
 
   - UI Commands were screenshotted and then processed in Photoshop using
   actions stripping out the color and leaving just a list of names.
 
 - Images were run through [Google Tesseract](https://github.com/tesseract-ocr/tesseract)
-OCR (Optical Character Recognition) functionality to convert extract text data
-from images returning a CSV file.
+OCR (Optical Character Recognition) functionality to extract text data
+from screenshots, returning a CSV file of UI names.
 
 - [Python FuzzyWuzzy](https://docs.blender.org/api/current/mathutils.geometry.html)
 provided a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
 algorithm for fuzzy matching UI display names to API commands.
 
 - Even if there were abbrevitions made to the diplay name of a command,
-  this technique worked for most UI names as long as there was some
-  similarity to their corresponding API commands.
+this technique worked for most UI names as long as there was some
+similarity to their corresponding API commands.
 
 ```python
 # #################################################### FUZZYWUZZY MATCH RESULTS
@@ -572,10 +572,10 @@ SampleFuzzyWuzzyOutput = [
 ]
 ```
 
-#### Fusion Toggle Switches
+#### Dynamically Generated UI Toggle Switches
 
-- This allowed emulation of some quality of life features that are present in
-Maya and 3Ds-Max that modelers are accustomed to.
+- Autohotkey emulation of some quality of life features that are present in
+Maya and 3Ds-Max such as Wireframe On Shaded and Isolate Selection
 
 - Toggle Switches were generated in Python and parsed into
 the Autohotkey code below, dynamically merging two Fusion mappings into a ternary toggle switch.
@@ -638,35 +638,16 @@ Integrating new applications requires the following steps
 <li> Output a native hotkey file for integration into the host program</li>
 </ol>
 
+#### Photoshop .Kys File Internals
+- Photoshop's .Kys format follows a standard XML schema layout
 
-### Example
+- Photoshop commands are registered internally with specific key and tool IDs.
+This is because Image and Layer share common UI names.
 
-#### Understanding Photoshops .kys file
-Reverse engineer the data storage format and ordering
-derive 3 main command types
-- static unique id
-- dynamic no unique id
-- stackable tool groups vs unique tools
+- By flooding all assigned tools with a key mapping allowed for both unique
+IDs to be extracted along with the API command name, binding them to the
+non-unique UI names and tagging them when visualizing a key map chart.
 
-Flood the UI with assignments to any desired command
-
-Build a map between UI representation of a command and its internal xml storage representation
-determine a sort order for left vs right handed artists
-log artist sessions in photoshop and sort most used vs least used commands according to frequency
-reconfigure the ui to be most accessable to the artist
-On top of that override photoshops reserved keys for things like brush size and layer manipulation
-using autohotkey
-Parsing photoshop style input sequences to autohotkey syntax hotkey strings
-	output an authotkey file with these recursive maps
-
-when I hit alt 1 I want to decrese brush size
-again keeping the data self documenting I automatically generate a comment string as well
-
-Finally combining both the recursive autohotkey maps as well as the photoshop
-mappings I parse those sequence strings to be readable in html visualizer,
-which is a simple webpage whose html slots (html hotkey sequence as
-key)at each keyboard location take in a text string
-(value)
 
  ------------------------------------------------------------------------------
 ## MAYA PROJECTS BREAKDOWN
