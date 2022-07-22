@@ -526,21 +526,17 @@ place_text(
 
   - In order to solve this and create a binding between UI names and back-end
   API names for assignable commands UI Commands were screenshotted and then
-  processed in photoshop using actions stripping out the color and leaving just
+  processed in Photoshop using actions stripping out the color and leaving just
   a list of names.
 
-- [Google Tesseract](https://github.com/tesseract-ocr/tesseract) then extracted
-csv data for each name, generating text lists.
+- [Google Tesseract](https://github.com/tesseract-ocr/tesseract) proved OCR
+functionality to convert extract text data from images returning a CSV file.
 
 - [Python FuzzyWuzzy](https://docs.blender.org/api/current/mathutils.geometry.html)
-Since there were 1000 or more possible UI names in Fusion360, the FuzzyWuzzy
-library provded provided closest possible matches between UI names and API names
-leveraging the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
-algorithm.
+Provided a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+algorithm for fuzzy matching UI names to API names.
 
-- [Google Tesseract](https://github.com/tesseract-ocr/tesseract)
-
-- [Python FuzzyWuzzy](https://docs.blender.org/api/current/mathutils.geometry.html)
+- This worked well since UI names are somewhat similar to their corresponding API commands.
 
 #### Integrating new applications
 
