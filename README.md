@@ -625,6 +625,12 @@ F2::
 
 #### Integrating new applications
 
+Integrating new applications requires two steps.
+<ol>
+<li> Binding API commands to UI Commands</li>
+<li> Parsing the target programs hotkey syntax the Key Map Visualizer</li>
+</ol>
+
 Look at Photoshop's configuration file
 reverse engineer the data storage format and ordering
 derive 3 main command types
