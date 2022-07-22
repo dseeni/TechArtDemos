@@ -1,7 +1,7 @@
+# Technical Art Demos
+
 # Table of Contents
 1. [Example](#example)
-
-# Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
 ### PolyUnchamfer & PolyUnbevel Demo
@@ -196,6 +196,70 @@ selected.</li>
 <li>Edge Ring selection is triggered.</li>
 <li>PolyUnChamfer is called.</li>
 </ol>
+
+-----------------------------------------------------------------------
+## Maya SnapAlign
+### A new snapping system for Maya
+- Snap to nearest component or object solely based on cursor position
+- Supports planar snapping with XY YZ ZX tool handles similar to 3Ds-Max
+- Supports relative spacing for components and objects allowing easy alignment
+- Snap to Edge Center and Face Centers as well as verticies
+
+Relative spacing on or off to stack objects
+Built a snapping system from the ground up
+Calculates the face center of a polygon even if a real vertex does not exist
+easy align objects
+all the math same challenges data and math
+select neraest face center
+edge center
+or vertex
+purely based on cursor position no clicking
+then snap and align
+predictive
+always Y UP
+works with vertexs edges and faces too
+
+-----------------------------------------------------------------------
+SMART TOOL HANDLE ACTIVATION: (Lazy Boi Mode)
+Based on Manipulator to Camera Space projection, SnapAlign can calculate the
+nearest active tool handle to the cursor, it does this by first projecting
+the gizmo axis onto the camera plane, then does a 2D vector angle calculation
+between the projected gizmo axis angles (-X -Y -Z +X +Y +Z) and the cursor
+to projected gizmo Vector, by finding the minimum delta vector, we can dervice
+the "closest" active tool handle to cursor.
+See the demo here:
+
+This can easily be extended to multiple tools, including duplicate special,
+wherein the active axis for the duplicate operation is determined by the cursor
+position! No more menus!
+
+SnapAlign in action, with Smart Tool Handle Activation turned ON:
+
+-----------------------------------------------------------------------
+PRIMALIGN
+Aligns objects to the component (edge center face center OR vertex normal)
+under the cursor. If the object is a newly created primitive at world center
+PrimAlign will move and bake the selected Object's Object Space -Y bounding box
+to the the grid floor prior to alignment transform. This allows for predictable
+alignment of the object's ground plane to the target geometry's alignment
+plane.
+
+Secondary Function, when an active axis of the move tool is selected and a component
+is selected, PrimAlign will aim the active axis towards the component center.
+Either edge center or face center for edges and faces, or vertex if a vertex is selected.
+
+RECORD WITH PLANAR DETECTION ON
+
+-----------------------------------------------------------------------
+PLANEFLATTEN
+Consecutive Faces selected will align the first face to the second face ALONG
+the connected edges as vector Angles
+
+Seperated Face selections will porject along the vectors of each face, results
+in a skew like effect per face towards the target plane alignment
+
+Select 3 vertex of a non planar face and planar align that face while respecting
+surround geometry
 
 -----------------------------------------------------------------------
 
@@ -647,102 +711,6 @@ This is because Image and Layer share common UI names.
 - By flooding all assigned tools with a key mapping allowed for both unique
 IDs to be extracted along with the API command name, binding them to the
 non-unique UI names and tagging them when visualizing a key map chart.
-
-
- ------------------------------------------------------------------------------
-## MAYA PROJECTS BREAKDOWN
-Unchamfer ->
-Using mayas lower level python api, which really is a procedurally generated
-python api that has a 1 to 1 binding to its c++ api via SWIG
-simplified wrapper and interface generator
-https://www.swig.org/
-
-Vector Line Intersection:
-https://vicrucann.github.io/tutorials/3d-geometry-algorithms/#skew-lines-geometry-shortest-distance-and-projection-of-one-skew-line-onto-another
-http://paulbourke.net/geometry/pointlineplane/
-
-CPA algorithim:
-https://core.ac.uk/download/pdf/74237799.pdf
-
-Alternate case:
-non perfect intersections = CPA solver take the minimum on each vector then average
-
-EdgeCase:
-corner bevels of a 3 way intersection (triangle corner) Cpa Solving
-This required recursive bevel operations, performing the solver twice
-
-The first challenge apart from building a math library that did not exist in
-maya (extending the API) was
-mesh traversal
-how to traverse along an edge loop or ring
-how to identify branch points (triangles)
-how to organize and store the data in such a way that I know the directions
-of each vector, what to input where, and keep tract of what to finall move
-to a resulting location
-
-at triangles
-	how to do recursive 3 way solvers between A B C vectors
-
-(Something I think would be useful in our javascript performance issue)
-Performance issues, cmds wasnt cutting it and api forces you to compact your
-data into arrays and reduce the api calls by tightly organizing your data
-calling eveyrthing you need at once and sorting it yourself.
-
-CmdsSnapalign
-Relative spacing on or off to stack objects
-Built a snapping system from the ground up
-Calculates the face center of a polygon even if a real vertex does not exist
-easy align objects
-all the math same challenges data and math
-select neraest face center
-edge center
-or vertex
-purely based on cursor position no clicking
-then snap and align
-predictive
-always Y UP
-works with vertexs edges and faces too
-
-Smart Tool Handle Activation: (Lazy Boi Mode)
-Based on Manipulator to Camera Space projection, SnapAlign can calculate the
-nearest active tool handle to the cursor, it does this by first projecting
-the gizmo axis onto the camera plane, then does a 2D vector angle calculation
-between the projected gizmo axis angles (-X -Y -Z +X +Y +Z) and the cursor
-to projected gizmo Vector, by finding the minimum delta vector, we can dervice
-the "closest" active tool handle to cursor.
-See the demo here:
-
-This can easily be extended to multiple tools, including duplicate special,
-wherein the active axis for the duplicate operation is determined by the cursor
-position! No more menus!
-
-SnapAlign in action, with Smart Tool Handle Activation turned ON:
-
-PRIMALIGN
-Aligns objects to the component (edge center face center OR vertex normal)
-under the cursor. If the object is a newly created primitive at world center
-PrimAlign will move and bake the selected Object's Object Space -Y bounding box
-to the the grid floor prior to alignment transform. This allows for predictable
-alignment of the object's ground plane to the target geometry's alignment
-plane.
-
-Secondary Function, when an active axis of the move tool is selected and a component
-is selected, PrimAlign will aim the active axis towards the component center.
-Either edge center or face center for edges and faces, or vertex if a vertex is selected.
-
-RECORD WITH PLANAR DETECTION ON
-PLANEFLATTEN
-Consecutive Faces selected will align the first face to the second face ALONG
-the connected edges as vector Angles
-
-Seperated Face selections will porject along the vectors of each face, results
-in a skew like effect per face towards the target plane alignment
-
-Select 3 vertex of a non planar face and planar align that face while respecting
-surround geometry
-
-Photoshop projects
-Hot reloading js
 
 
 
