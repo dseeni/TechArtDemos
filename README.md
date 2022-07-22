@@ -518,29 +518,107 @@ place_text(
 ![](./DemoExamples/PhotoshopHotkeyExampleCropped.png)
 
 #### Binding front end UI names to API names
-  - In the case of Fusion 360, at custom keyboard shortcuts could only be
-  saved one at a time from the user interface required multiple user prompts.
+  - In the case of Fusion 360, at the time custom keyboard shortcuts could only
+  be saved one at a time from the user interface, required multiple user
+  prompts and menu selections.
 
   - Documentation for all possible commands via the API was available, but
-  they did not accurately match the names present in the UI.
+  they did not accurately match the names present in the UI menus.
 
-  - In order to solve this and create a binding between UI names and back-end
-  API names for assignable commands UI Commands were screenshotted and then
-  processed in Photoshop using actions stripping out the color and leaving just
-  a list of names.
+  - Since Users should only care about UI names for quick reference to key maps
+  a binding between UI names and API commands was required.
 
-- [Google Tesseract](https://github.com/tesseract-ocr/tesseract) proved OCR
-functionality to convert extract text data from images returning a CSV file.
+  - UI Commands were screenshotted and then processed in Photoshop using
+  actions stripping out the color and leaving just a list of names.
+
+- Images were run through [Google Tesseract](https://github.com/tesseract-ocr/tesseract)
+OCR (Optical Character Recognition) functionality to convert extract text data
+from images returning a CSV file.
 
 - [Python FuzzyWuzzy](https://docs.blender.org/api/current/mathutils.geometry.html)
 Provided a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
 algorithm for fuzzy matching UI names to API names.
 
-- This worked well since UI names are somewhat similar to their corresponding API commands.
+- Even if there were abbrevitions made to the diplay name of a command,
+  this technique worked for most UI names as long as there was some
+  similarity to their corresponding API commands.
+
+```python
+SampleFuzzyWuzzyOutput = [
+	('std_F4', 'Shaded', 'SDK.MAGNestDisplayCmd.Shaded'),
+	('alt_F4', 'Pattern Rectangular', 'ShapeRectangleCenter'),
+	('shift_F4', 'Circular Pattern', 'CircularSketchPatternCommand'),
+	('alt_shift_F4', 'Pattern on Path', 'PatternOnPath'),
+	('ctrl_F4', 'pnt driven pattern', 'FusionDrawingCenterPatternEditCommand'),
+	('ctrl_alt_F4', 'Create Mesh Section Sketch', 'MeshPlanarSectionCommand'),
+	('ctrl_shift_F4', 'Compare Bodies', 'MeshCombineCommand'),
+	('ctrl_alt_shift_F4', 'Background Canvas', 'FusionAddBackgroundCanvasCommand'),
+	('std_F5', 'Appearance', 'PublisherAppearanceCommand'),
+	('alt_F5', 'surface Reverse Normals', 'MeshReverseNormalsCommand'),
+	('shift_F5', 'Section Analysis', 'FusionHalfSectionViewCommand'),
+	('alt_shift_F5', 'Zebra Analysis', 'FusionZebraAnalysisCommand'),
+	('ctrl_F5', 'Toggle Curvature Display', 'FusionToggleCurveCurvatureCombCommand'),
+	('ctrl_alt_F5', 'Curvature Map Analysis', 'FusionCurvatureMapAnalysisCommand'),
+	('ctrl_shift_F5', 'Curvature Comb Analysis', 'FusionCurvatureCombAnalysisCommand'),
+	('ctrl_alt_shift_F5', 'Draft Analysis', 'FusionDraftAnalysisCommand'),
+	('std_F6', 'New Design', 'NewDocumentCommand'),
+	...
+]
+```
+
+
 
 #### Integrating new applications
 
 #### Fusion Toggle Switches
+
+
+
+```autohotkey
+WireframeOnShaded_TGL := 1
+XRayOnShaded_TGL := 1
+Incremental_TGL := 1
+PaintSel_TGL := 1
+Isolate_TGL := 1
+
+; Wireframe On Shaded Toggle
+F1::
+{
+    SendInput, % WireframeOnShaded_TGL = 1 ? ( "^{6}", WireframeOnShaded_TGL := 0 ) : ( "^{4}", WireframeOnShaded_TGL := 1 )
+    return
+}
+
+; XRay View Mode Toggle
+F4::
+{
+    SendInput, % XRayOnShaded_TGL = 1 ? ( "^{5}", XRayOnShaded_TGL := 0 ) : ( "^{6}", XRayOnShaded_TGL := 1 )
+    return
+}
+
+; Incremental Move Toggle
+F2::
+{
+    SendInput, % Incremental_TGL = 1 ? ( "{F2}", Incremental_TGL := 0 ) : ( "{F1}", Incremental_TGL := 1 )
+    return
+}
+
+; Pain Selection Toggle
+^Space::
+{
+    SendInput, % PaintSel_TGL = 1 ? ( "{3}", PaintSel_TGL := 0 ) : ( "{1}", PaintSel_TGL := 1 )
+    return
+}
+
+; Isolate Selection Toggle
+!CapsLock::
+{
+    SendInput, % Isolate_TGL = 1 ? ( "!{,}", Isolate_TGL := 0 ) : ( "^!{,}", Isolate_TGL := 1 )
+    SetCapsLockState, AlwaysOff
+    return
+}
+```
+
+
 
 Look at photoshops configuration file
 reverse engineer the data storage format and ordering
