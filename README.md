@@ -4,7 +4,7 @@
 # Technical Art Demos
 
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
-### PolyUnchamfer & PolyUnbevel Demos
+### PolyUnchamfer & PolyUnbevel Demo
 ![](./DemoExamples/UnbevelUnchamfer.gif)
 
 ### PolyUnchamfer Project Overview:
@@ -18,7 +18,9 @@ and MMatrix are used for solver calculations.
 - All the following scripts utilize a custom vector calculus / linear algebra
 library within Maya API 2.0. In essence, it's an augmented version of Blender's
 [mathutils.geometry](https://docs.blender.org/api/current/mathutils.geometry.html), covering a wide array of intersection and collision
-scenarios (examples below). Since all vector and matrix calculations are done
+scenarios (examples below). 
+
+- Since all vector and matrix calculations are done
 utilizing Maya API 2.0 exclusively, there is no dependency on NumPy and
 backwards compatibility with Maya 2018 - 2022 is maintained without an
 additional third-party package, simplifying distribution.
