@@ -232,6 +232,10 @@ during layout or modeling tasks
 -----------------------------------------------------------------------
 ## Smart Tool Handle Activation
 ![](./DemoExamples/GizmoActivation.gif)
+- [x] Activate tool handles closest to cursor
+- [x] Modify Duplicate Special directions + or - (X, Y, Z) based on the cursor position relative to selected object's orientation axis
+- [x] Easily transform deformers or joints by 90 degree shifts based on cursor position
+- [x] Avoid misclicks or undesired tool handle activation by implementing allowing snapping to work solely based on cursor position
 
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
 nearest active tool handle to the cursor, it does this by first projecting
