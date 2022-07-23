@@ -231,6 +231,9 @@ during layout or modeling tasks
 
 -----------------------------------------------------------------------
 SMART TOOL HANDLE ACTIVATION: (Lazy Boi Mode)
+
+![](./DemoExamples/GizmoActivation.gif)
+
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
 nearest active tool handle to the cursor, it does this by first projecting
 the gizmo axis onto the camera plane, then does a 2D vector angle calculation
