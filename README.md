@@ -157,7 +157,7 @@ option, and select the edge that yields the minimum distance to intersection
 
 -----------------------------------------------------------------------
 
-### PolyUnbevel Demo
+### PolyUnbevel Overview
 
 ![](./DemoExamples/UnBevelSteps.jpg)
 
@@ -230,12 +230,13 @@ during layout or modeling tasks
 ![](./DemoExamples/cmdsSnapAlignObjectPlanar.gif)
 
 -----------------------------------------------------------------------
-## Smart Tool Handle Activation
-![](./DemoExamples/GizmoActivation.gif)
-- [x] Activate tool handles closest to cursor
+## Maya SmartActivate
+### Tool handle activation and directional inference based upon cursor position
+- [x] Activate gizmo tool handles closest to cursor without clicking
 - [x] Modify Duplicate Special directions + or - (X, Y, Z) based on the cursor position relative to selected object's orientation axis
-- [x] Easily transform deformers or joints by 90 degree shifts based on cursor position
-- [x] Avoid misclicks or undesired tool handle activation by implementing allowing snapping to work solely based on cursor position
+- [x] Easily transform deformers or joints by 90 degree increments based on cursor position
+- [x] Avoid misclicks or undesired tool handle activation by allowing snapping to work solely based on cursor position
+- [x] Easily Extensible to any other Maya tools
 
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
 nearest active tool handle to the cursor, it does this by first projecting
@@ -244,6 +245,9 @@ between the projected gizmo axis angles (-X -Y -Z +X +Y +Z) and the cursor
 to projected gizmo Vector, by finding the minimum delta vector, we can dervice
 the "closest" active tool handle to cursor.
 See the demo here:
+
+#### Cursor Based Tool Handle Activation Demo
+![](./DemoExamples/GizmoActivation.gif)
 
 This can easily be extended to multiple tools, including duplicate special,
 wherein the active axis for the duplicate operation is determined by the cursor
