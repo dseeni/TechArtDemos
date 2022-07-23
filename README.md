@@ -229,20 +229,6 @@ during layout or modeling tasks
 #### Planar Align Component Selections Demo
 ![](./DemoExamples/cmdsSnapAlignObjectPlanar.gif)
 
-Relative spacing on or off to stack objects
-Built a snapping system from the ground up
-Calculates the face center of a polygon even if a real vertex does not exist
-easy align objects
-all the math same challenges data and math
-select nearest face center
-edge center
-or vertex
-purely based on cursor position no clicking
-then snap and align
-predictive
-always Y UP
-works with vertexs edges and faces too
-
 -----------------------------------------------------------------------
 SMART TOOL HANDLE ACTIVATION: (Lazy Boi Mode)
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
@@ -272,7 +258,19 @@ Secondary Function, when an active axis of the move tool is selected and a compo
 is selected, PrimAlign will aim the active axis towards the component center.
 Either edge center or face center for edges and faces, or vertex if a vertex is selected.
 
-RECORD WITH PLANAR DETECTION ON
+Relative spacing on or off to stack objects
+Built a snapping system from the ground up
+Calculates the face center of a polygon even if a real vertex does not exist
+easy align objects
+all the math same challenges data and math
+select nearest face center
+edge center
+or vertex
+purely based on cursor position no clicking
+then snap and align
+predictive
+always Y UP
+works with vertexs edges and faces too
 
 -----------------------------------------------------------------------
 PLANEFLATTEN
@@ -285,6 +283,7 @@ in a skew like effect per face towards the target plane alignment
 Select 3 vertex of a non planar face and planar align that face while respecting
 surround geometry
 
+RECORD WITH PLANAR DETECTION ON
 -----------------------------------------------------------------------
 
 ## SuperCharge Configurator
