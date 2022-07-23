@@ -262,6 +262,9 @@ from axial comparisons.
 - [x] Newly created objects at World-Space origins will have their pivots automatically shifted to -Y prior to surface alignment
 - [x] Objects orientation on the alignment surface faces the edge most in alignment with World-Space Y
 
+TODO: add prim align when snap to face project to nearest edge or vert to cursor auto aim
+TODO: when align to edge aim at nearest vert to cursor of the two edges
+
 Aligns objects to the component (edge center face center OR vertex normal)
 under the cursor. If the object is a newly created primitive at world center
 PrimAlign will move and bake the selected Object's Object Space -Y bounding box
