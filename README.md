@@ -210,15 +210,14 @@ during layout or modeling tasks
 - Object or Component full snap *[XYZ]*
 
 #### SnapAlign appends the following features
-- Object or Component Planar Snap along plane *[XY, YZ, ZX]*
+- Object or Component Planar Snap along active tool handles *[XY, YZ, ZX]*
 - Snap to edge center and face centers as well as components
-- Planar snap with XY YZ ZX set as active tool handle on the move tool similar to 3Ds-Max
 - SnapAlign extends Maya's *Keep Spacing* to include components *and* objects for easy alignment and snapping
 
 #### Snapping based on cursor position
 - SnapAlign snaps to nearest component or object solely based on cursor position
-- Nearest Component or Object is implements a similar algorithm to Maya's selection preview highlighting
-- Links the PySide2/PyQt5 Screen Space coordinate system with the Maya API Screen Space coordinate system to determine cursor position without clicking
+- The nearest component or object to cursor algorithm implements a similar algorithm to Maya's Pre-selection highlighting
+- Converts between the PySide2/PyQt5 Screen Space coordinate system and the Maya API Screen Space coordinate system to determine the nearest component or object to the cursor without clicking
 
 #### Edge Center and Face Center Snapping Demo
 ![](./DemoExamples/cmdsSnapAlignFaceEdgeCenter.gif)
@@ -228,35 +227,6 @@ during layout or modeling tasks
 
 #### Planar Align Component Selections Demo
 ![](./DemoExamples/cmdsSnapAlignObjectPlanar.gif)
-
-<ul>
-<li>Edge ring selection is triggered, selecting the interior edge loops.</li>
-	<ul>
-	<li>In the rare case that the partial edge ring selection edge count
-	is greater than the outer ring, a 3 edge selection can be made to indicate
-	which part of the edge ring to trigger unbevel on. (See Timelapse)</li>
-	</ul>
-<li>The original selection is excluded from the current ring selection.</li>
-<li>This interior edge ring is extended full edge loops and deleted.</li>
-<li>Edge and Vertex IDs have changed due to topological modification of the mesh.</li>
-	<ul>
-	<li>Using each original edge's World-Space coordinates, edge centers are
-	calculated and projected to the mesh via Maya API calls to MPointOnMesh.</li>
-	<li>A minimum delta vector is calculated between the original edge
-	vector mid-point and the mid-point of each newly created edge. </li>
-	<li> The original edge selections yield MPointOnMesh delta vectors with
-	a magnitude close to 0.</li>
-	<li>This allows recovery of the original edge selection, despite the
-	edges having a newly assigned edge ID.</li>
-	<li> The original edge selection is then converted to faces.</li>
-	</ul>
-<li>The common face amongst each 'ConvertToFaces' call is filtered and
-selected.</li>
-<li>The current face selection is converted to edges.</li>
-<li>The original selection edges are removed.</li>
-<li>Edge Ring selection is triggered.</li>
-<li>PolyUnChamfer is called.</li>
-</ul>
 
 Relative spacing on or off to stack objects
 Built a snapping system from the ground up
