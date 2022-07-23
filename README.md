@@ -264,6 +264,8 @@ from axial comparisons.
 
 TODO: add prim align when snap to face project to nearest edge or vert to cursor auto aim
 TODO: when align to edge aim at nearest vert to cursor of the two edges
+TODO: add a duplicate mode with rivets (chain with duplicate in another hotkey)
+TODO: duplicate special with tool handle activation
 
 Aligns objects to the component (edge center face center OR vertex normal)
 under the cursor. If the object is a newly created primitive at world center
