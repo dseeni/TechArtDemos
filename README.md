@@ -204,6 +204,7 @@ selected.</li>
 - [x] Easily align and snap objects or components along an active axis or plane
 during layout or modeling tasks
 - [x] Aim lights, Aim Constraints, or align deformers when lighting or rigging
+- [x] Avoid misclicks or undesired tool handle activation by implementing allowing snapping to work solely based on cursor position
 
 #### SnapAlign includes all the snapping features found in Maya's native snapping system
 - Axis Constraint Snap along axis *[X, Y, Z]*
@@ -216,7 +217,7 @@ during layout or modeling tasks
 
 #### Snapping based on cursor position
 - SnapAlign snaps to nearest component or object solely based on cursor position
-- The nearest component or object to cursor algorithm implements a similar algorithm to Maya's Pre-selection highlighting
+- The cursor snap algorithm implements a similar algorithm to Maya's Pre-selection highlighting
 - Converts between the PySide2/PyQt5 Screen Space coordinate system and the Maya API Screen Space coordinate system to determine the nearest component or object to the cursor without clicking
 
 #### Edge Center and Face Center Snapping Demo
@@ -233,7 +234,7 @@ Built a snapping system from the ground up
 Calculates the face center of a polygon even if a real vertex does not exist
 easy align objects
 all the math same challenges data and math
-select neraest face center
+select nearest face center
 edge center
 or vertex
 purely based on cursor position no clicking
