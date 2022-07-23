@@ -241,7 +241,7 @@ during layout or modeling tasks
 #### Cursor Based Tool Handle Activation Demo
 ![](./DemoExamples/GizmoActivation.gif)
 
-#### How it works
+#### SmartActivate Algorithm Overview
 - Gizmo Tool Handles create two vectors per axis, in the positive and negative directions of X, Y, Z
 - These 6 vectors are projected from 3D space into Maya API Screen Space
 - The Gizmo/Object Origin is projected from 3D space into Maya Api Screen Space
@@ -253,23 +253,15 @@ the cursor.
 - In the case of orthographic alignment of the 3D camera, that axis is excluded
 from axial comparisons.
 
-are projected from 3D Space to Screen Space
-Based on Manipulator to Camera Space projection, SnapAlign can calculate the
-nearest active tool handle to the cursor, it does this by first projecting
-the gizmo axis onto the camera plane, then does a 2D vector angle calculation
-between the projected gizmo axis angles (-X -Y -Z +X +Y +Z) and the cursor
-to projected gizmo Vector, by finding the minimum delta vector, we can dervice
-the "closest" active tool handle to cursor.
-See the demo here:
-
-This can easily be extended to multiple tools, including duplicate special,
-wherein the active axis for the duplicate operation is determined by the cursor
-position! No more menus!
-
-SnapAlign in action, with Smart Tool Handle Activation turned ON:
-
 -----------------------------------------------------------------------
-PRIMALIGN
+## Maya PrimAlign
+### Quickly place objects aligned to the nearest surface normal with predictable orientations
+- [x] Activate gizmo tool handles closest to cursor without clicking
+- [x] Modify Duplicate Special directions + or - (X, Y, Z) based on the cursor position relative to selected object's orientation axis
+- [x] Easily transform deformers or joints by 90 degree increments based on cursor position
+- [x] Avoid misclicks or undesired tool handle activation by allowing snapping to work solely based on cursor position
+- [x] Easily Extensible to any other Maya tools, think of SmartActivate as a modifier to any Maya command that takes directional input
+
 Aligns objects to the component (edge center face center OR vertex normal)
 under the cursor. If the object is a newly created primitive at world center
 PrimAlign will move and bake the selected Object's Object Space -Y bounding box
