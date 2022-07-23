@@ -238,6 +238,20 @@ during layout or modeling tasks
 - [x] Avoid misclicks or undesired tool handle activation by allowing snapping to work solely based on cursor position
 - [x] Easily Extensible to any other Maya tools, think of SmartActivate as a modifier to any Maya command that takes directional input
 
+#### Cursor Based Tool Handle Activation Demo
+![](./DemoExamples/GizmoActivation.gif)
+
+#### How it works
+- Gizmo Tool Handles create two vectors per axis, in the positive and negative directions of X, Y, Z
+- These 6 vectors are projected from 3D space into Maya API Screen Space
+- The Gizmo/Object Origin is projected from 3D space into Maya Api Screen Space
+- PySide2/PyQt5 Cursor Position coordinates are converted into API Screen Space coordinates
+- In Screen Space, a 2D vector is created from the cursor position to the object position in 2D Screen Space
+- Delta Angles are computed between the the Mouse Vector and the 6 Screen Space
+vectors, with the minimum delta returning the closest Axis or Tool Handle to
+the cursor.
+
+are projected from 3D Space to Screen Space
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
 nearest active tool handle to the cursor, it does this by first projecting
 the gizmo axis onto the camera plane, then does a 2D vector angle calculation
@@ -245,9 +259,6 @@ between the projected gizmo axis angles (-X -Y -Z +X +Y +Z) and the cursor
 to projected gizmo Vector, by finding the minimum delta vector, we can dervice
 the "closest" active tool handle to cursor.
 See the demo here:
-
-#### Cursor Based Tool Handle Activation Demo
-![](./DemoExamples/GizmoActivation.gif)
 
 This can easily be extended to multiple tools, including duplicate special,
 wherein the active axis for the duplicate operation is determined by the cursor
