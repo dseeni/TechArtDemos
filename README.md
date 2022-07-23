@@ -255,12 +255,12 @@ from axial comparisons.
 
 -----------------------------------------------------------------------
 ## Maya PrimAlign
-### Quickly place objects aligned to the nearest surface normal with predictable orientations
-- [x] Activate gizmo tool handles closest to cursor without clicking
-- [x] Modify Duplicate Special directions + or - (X, Y, Z) based on the cursor position relative to selected object's orientation axis
-- [x] Easily transform deformers or joints by 90 degree increments based on cursor position
-- [x] Avoid misclicks or undesired tool handle activation by allowing snapping to work solely based on cursor position
-- [x] Easily Extensible to any other Maya tools, think of SmartActivate as a modifier to any Maya command that takes directional input
+### Align objects to the nearest surface normal with predictable orientations
+- [x] Targeting determined solely based on cursor hover position
+- [x] Align to faces, edges, or vertices
+- [x] Aim Objects Axis to a selected vertex with axis determined by the active tool handle
+- [x] Newly created objects at World-Space origins will have their pivots automatically shifted to -Y prior to surface alignment
+- [x] Objects orientation on the alignment surface faces the edge most in alignment with World-Space Y
 
 Aligns objects to the component (edge center face center OR vertex normal)
 under the cursor. If the object is a newly created primitive at world center
