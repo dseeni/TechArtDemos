@@ -1,6 +1,6 @@
-# Technical Art Demos
+# Technical Art Portfolio
 
-# Table of Contents
+## Table of Contents
 1. [Example](#example)
 
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
@@ -247,7 +247,7 @@ during layout or modeling tasks
 - The Gizmo/Object Origin is projected from 3D space into Maya Api Screen Space
 - PySide2/PyQt5 Cursor Position coordinates are converted into API Screen Space coordinates
 - In Screen Space, a 2D vector is created from the cursor position to the object position in 2D Screen Space
-- Delta Angles are computed between the the Mouse Vector and the 6 Screen Space
+- Delta Angles are computed between the Mouse Vector and the 6 Screen Space
 vectors, with the minimum delta returning the closest Axis or Tool Handle to
 the cursor.
 - In the case of orthographic alignment of the 3D camera, that axis is excluded
@@ -255,7 +255,7 @@ from axial comparisons.
 
 -----------------------------------------------------------------------
 ## Maya PrimAlign
-### Align objects to the nearest surface normal with predictable orientations
+### Align objects to the nearest surface normal with deterministic orientations
 - [x] Targeting determined solely based on cursor hover position
 - [x] Align to faces, edges, or vertices
 - [x] Aim Objects Axis to a selected vertex with axis determined by the active tool handle
@@ -265,7 +265,7 @@ from axial comparisons.
 Aligns objects to the component (edge center face center OR vertex normal)
 under the cursor. If the object is a newly created primitive at world center
 PrimAlign will move and bake the selected Object's Object Space -Y bounding box
-to the the grid floor prior to alignment transform. This allows for predictable
+to the grid floor prior to alignment transform. This allows for deterministic
 alignment of the object's ground plane to the target geometry's alignment
 plane.
 
@@ -285,7 +285,7 @@ purely based on cursor position no clicking
 then snap and align
 predictive
 always Y UP
-works with vertexs edges and faces too
+works with vertex edges and faces too
 
 -----------------------------------------------------------------------
 PLANEFLATTEN
