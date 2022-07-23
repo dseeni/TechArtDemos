@@ -230,7 +230,7 @@ during layout or modeling tasks
 ![](./DemoExamples/cmdsSnapAlignObjectPlanar.gif)
 
 -----------------------------------------------------------------------
-## Maya SnapAlign Smart TOOL HANDLE ACTIVATION: (Lazy Boi Mode)
+## Smart Tool Handle Activation
 ![](./DemoExamples/GizmoActivation.gif)
 
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
