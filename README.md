@@ -250,6 +250,8 @@ during layout or modeling tasks
 - Delta Angles are computed between the the Mouse Vector and the 6 Screen Space
 vectors, with the minimum delta returning the closest Axis or Tool Handle to
 the cursor.
+- In the case of orthographic alignment of the 3D camera, that axis is excluded
+from axial comparisons.
 
 are projected from 3D Space to Screen Space
 Based on Manipulator to Camera Space projection, SnapAlign can calculate the
