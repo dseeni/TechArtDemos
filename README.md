@@ -262,6 +262,7 @@ from axial comparisons.
 - [x] Newly created objects at World-Space origins will have their pivots automatically shifted to -Y prior to surface alignment
 - [x] Objects orientation on the alignment surface faces the edge most in alignment with World-Space Y
 
+- TODO: add Prim ALign demo with surface orientation aligned to second closest component
 - TODO: add prim align when snap to face project to nearest edge or vert to cursor auto aim
 - TODO: when align to edge aim at nearest vert to cursor of the two edges
 - TODO: add a duplicate mode with rivets (chain with duplicate in another hotkey)
