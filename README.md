@@ -269,6 +269,16 @@ from axial comparisons.
 - TODO: duplicate special with tool handle activation
 - TODO: smooth preview toggle
 
+- Make videos...
+- DONE: do an angle comparison between the cursorpos2facecenterVector and each
+- facecenter2edge projection? makes it easier on tight spaces
+- DONE: add prim align when snap to face project to nearest edge or vert to cursor auto aim
+- DONE: when align to edge aim at nearest vert to cursor of the two edges
+- DONE: duplicate special with tool handle activation
+
+- DONE: add a duplicate mode with rivets (chain with duplicate in another hotkey)
+
+
 Aligns objects to the component (edge center face center OR vertex normal)
 under the cursor. If the object is a newly created primitive at world center
 PrimAlign will move and bake the selected Object's Object Space -Y bounding box
