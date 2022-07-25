@@ -218,7 +218,7 @@ during layout or modeling tasks
 #### Snapping based on cursor position
 - SnapAlign snaps to nearest component or object solely based on cursor position
 - The cursor snap algorithm implements a similar algorithm to Maya's Pre-selection highlighting
-- Converts between the PySide2/PyQt5 Screen Space coordinate system and the Maya API Screen Space coordinate system to determine the nearest component or object to the cursor without clicking
+- Converts between the PyQt5 Screen Space coordinate system and the Maya API Screen Space coordinate system to determine the nearest component or object to the cursor without clicking
 
 #### Edge Center and Face Center Snapping Demo
 ![](./DemoExamples/cmdsSnapAlignFaceEdgeCenter.gif)
@@ -245,7 +245,7 @@ during layout or modeling tasks
 - Gizmo Tool Handles create two vectors per axis, in the positive and negative directions of X, Y, Z
 - These 6 vectors are projected from 3D space into Maya API Screen Space
 - The Gizmo/Object Origin is projected from 3D space into Maya Api Screen Space
-- PySide2/PyQt5 Cursor Position coordinates are converted into API Screen Space coordinates
+- PyQt5 Cursor Position coordinates are converted into API Screen Space coordinates
 - In Screen Space, a 2D vector is created from the cursor position to the object position in 2D Screen Space
 - Delta Angles are computed between the Mouse Vector and the 6 Screen Space
 vectors, with the minimum delta returning the closest Axis or Tool Handle to
