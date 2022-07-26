@@ -5,7 +5,7 @@
 
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
 ### PolyUnchamfer & PolyUnbevel Demo
-![](./DemoExamples/UnbevelUnchamferTest.mp4)
+https://user-images.githubusercontent.com/6591429/180913929-c11fcabe-f2ba-44b1-9a61-0cddb1101f66.mp4
 
 ### PolyUnchamfer Project Overview:
 
