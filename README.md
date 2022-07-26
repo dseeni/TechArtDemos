@@ -269,6 +269,7 @@ from axial comparisons.
 - TODO: duplicate special with tool handle activation
 - TODO: smooth preview toggle
 
+
 - Make videos...
 - DONE: do an angle comparison between the cursorpos2facecenterVector and each
 - facecenter2edge projection? makes it easier on tight spaces
@@ -767,6 +768,8 @@ This is because Image and Layer share common UI names.
 IDs to be extracted along with the API command name, binding them to the
 non-unique UI names and tagging them when visualizing a key map chart.
 
+compression
+ffmpeg -i UnbevelUnchamfer.mp4 -r 24 -vcodec libx264 -crf 20 -filter:v scale=1080:-1 UnbevelUnchamferTest.mp4
 
 
 
