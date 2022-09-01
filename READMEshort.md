@@ -276,7 +276,6 @@ from axial comparisons.
 - DONE: add prim align when snap to face project to nearest edge or vert to cursor auto aim
 - DONE: when align to edge aim at nearest vert to cursor of the two edges
 - DONE: duplicate special with tool handle activation
-
 - DONE: add a duplicate mode with rivets (chain with duplicate in another hotkey)
 
 
