@@ -768,9 +768,16 @@ This is because Image and Layer share common UI names.
 IDs to be extracted along with the API command name, binding them to the
 non-unique UI names and tagging them when visualizing a key map chart.
 
+-----------------------------------------------------------------------
 compression
 ffmpeg -i UnbevelUnchamfer.mp4 -r 24 -vcodec libx264 -crf 20 -filter:v scale=1080:-1 UnbevelUnchamferTest.mp4
 
+$originalVids = Get-ChildItem *.mp4 -Recurse
+
+foreach ($inputVid in $originalVids) {
+    $outputVid = [io.path]::ChangeExtension($inputVid.FullName, '.mp4')
+    ffmpeg.exe -i $inputVid.FullName -c:v libx264 -crf 18 -c:a aac -map_metadata 0 -filter:v scale=1080:-1 $outputVid
+}
 
 
 
