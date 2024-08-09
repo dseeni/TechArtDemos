@@ -1,11 +1,8 @@
 # Technical Art Portfolio
 
-## Table of Contents
-1. [Example](#example)
-
 ## Maya PolyUnchamfer & PolyUnbevel *(Geometric Reconstruction)*
 ### PolyUnchamfer & PolyUnbevel Demo
-!(./DemoExamples/UnbevelUnchamfer.gif)
+![](./DemoExamples/UnbevelUnchamfer.gif)
 
 ### PolyUnchamfer Project Overview:
 
